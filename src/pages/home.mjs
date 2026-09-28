@@ -106,7 +106,7 @@ ${stats}
 <section class="row g-show" data-reveal aria-labelledby="show-title">
 <div class="card show-card">
 ${blob('width:420px;height:420px;right:-130px;bottom:-200px;opacity:.55;--from:90deg;--dur:19s')}
-<p class="z label show-top"><span>${esc(site.show.station)}</span><span>${esc(site.show.frequency)}</span></p>
+<p class="z label show-top"><span>Podcast</span><span>${esc(site.show.frequency)}</span></p>
 <div class="z">
 <h2 class="show-name" id="show-title"><a href="emission.html">${esc(site.show.name)}</a></h2>
 <p class="show-text">${esc(site.show.text)}</p>

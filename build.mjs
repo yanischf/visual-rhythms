@@ -121,7 +121,7 @@ pages.push({
     assets,
     path: 'emission.html',
     active: 'emission',
-    title: `Émission — ${site.show.name} sur ${site.show.station} | ${site.name}`,
+    title: `Émission — ${site.show.name}, podcasts électroniques | ${site.name}`,
     description: `${site.show.intro} ${episodes.length} épisodes classés par style : ${styles.map((s) => s.label).join(', ')}.`,
     ogImage: site.show.image,
     schema: {
@@ -135,7 +135,6 @@ pages.push({
           description: site.show.intro,
           inLanguage: 'fr-FR',
           author: { '@id': ORG_ID },
-          publisher: { '@type': 'Organization', name: site.show.station },
           ...(site.links.showSoundcloud ? { sameAs: [site.links.showSoundcloud] } : {}),
         },
         ...episodes.map((e) => {
@@ -164,8 +163,8 @@ for (const dj of djs) {
     .filter((e) => findDj(e.dj)?.slug === dj.slug)
     .sort((a, b) => b.date.localeCompare(a.date))
     .map((e) => ({
-      title: `${site.show.name} — Visual Rhythms #${e.number}`,
-      source: `${site.show.station} · ${monthLabel(e.date)}`,
+      title: `Visual Rhythms #${e.number}`,
+      source: `${site.show.name} · ${monthLabel(e.date)}`,
       duration: e.duration,
       url: e.url,
       artwork: e.artwork,
@@ -254,7 +253,7 @@ Contact et booking : ${site.email}
 ## Pages
 
 - [Accueil](${site.url}/) : présentation du collectif, prochaines dates, chiffres clés, émission, roster, booking.
-- [Émission](${site.url}/emission.html) : ${site.show.name} (${site.show.frequency.toLowerCase()}) sur ${site.show.station}. ${episodes.length} épisodes classés par style.
+- [Émission](${site.url}/emission.html) : ${site.show.name}, émission de podcasts (${site.show.frequency.toLowerCase()}). ${episodes.length} épisodes classés par style.
 ${djs.map((d) => `- [${d.name}](${site.url}/djs/${d.slug}.html) : DJ résident (${d.styles.join(', ')}).`).join('\n')}
 
 ## Le collectif

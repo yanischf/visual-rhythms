@@ -4,7 +4,7 @@
   "lang": "fr",
   "email": "contact@visual-rhythms.net",
   "city": "Lyon",
-  "description": "Visual Rhythms est un collectif de DJs basé à Lyon et une émission mensuelle de podcasts sur la webradio Radio Béguin. Progressive, breaks, trance, acid, electro, techno, ambient : une vision ouverte et hybride des musiques électroniques.",
+  "description": "Visual Rhythms est un collectif de DJs basé à Lyon et une émission mensuelle de podcasts diffusée sur différentes webradios. Progressive, breaks, trance, acid, electro, techno, ambient : une vision ouverte et hybride des musiques électroniques.",
   "links": {
     "instagram": "",
     "soundcloud": "",
@@ -38,10 +38,9 @@
   ],
   "show": {
     "name": "Visual Rhythms Show",
-    "station": "Radio Béguin",
     "frequency": "Mensuel",
     "text": "Une exploration entre Progressive, Breaks, Trance, Acid, Electro… Nous invitons des artistes à partager leur vision à travers des sets éclectiques qui transcendent les genres et les époques.",
-    "intro": "Une série de podcasts sur la webradio Radio Béguin. Le mot d'ordre : exploration des musiques électroniques club d'aujourd'hui et d'hier.",
+    "intro": "Une série de podcasts diffusée sur différentes webradios. Le mot d'ordre : exploration des musiques électroniques club d'aujourd'hui et d'hier.",
     "image": "",
     "imageAlt": "Visuel de l'émission Visual Rhythms Show",
     "seasons": [

@@ -37,7 +37,7 @@ export function emission({ site, styles, episodes, findDj }) {
             artwork: e.artwork,
             tint: g.tint,
             seed: e.number,
-            left: site.show.station,
+            left: 'Podcast',
             todoKey: `${title} (${e.dj})`,
           });
         })
@@ -56,7 +56,7 @@ ${cards}
 <section class="row g-hero" data-reveal aria-labelledby="em-title">
 <div class="card em-card">
 ${blob('width:560px;height:560px;left:-200px;bottom:-330px;--from:120deg;--dur:19s', { veil: true })}
-<p class="z label muted">Podcast · ${esc(site.show.station)}</p>
+<p class="z label muted">Podcast · ${esc(site.show.frequency)}</p>
 <div class="z">
 <h1 class="em-title" id="em-title">Émission</h1>
 <p class="em-intro">${esc(site.show.intro)}</p>
