@@ -57,7 +57,7 @@ await cp(join(ROOT, 'static'), OUT, { recursive: true });
 // ---------- Données structurées ----------
 const ORG_ID = `${site.url}/#collectif`;
 const SERIES_ID = `${site.url}/emission.html#serie`;
-const sameAs = (links) => Object.values(links || {}).filter((v) => /^https?:/.test(v));
+const sameAs = (links) => [...new Set(Object.values(links || {}).filter((v) => /^https?:/.test(v)))];
 
 const orgSchema = {
   '@type': 'MusicGroup',

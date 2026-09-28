@@ -6,10 +6,10 @@
   "city": "Lyon",
   "description": "Visual Rhythms est un collectif de DJs basé à Lyon et une émission mensuelle de podcasts diffusée sur différentes webradios. Progressive, breaks, trance, acid, electro, techno, ambient : une vision ouverte et hybride des musiques électroniques.",
   "links": {
-    "instagram": "",
-    "soundcloud": "",
+    "instagram": "https://www.instagram.com/visual_rhythms_project/",
+    "soundcloud": "https://soundcloud.com/visual_rhythms",
     "facebook": "",
-    "showSoundcloud": ""
+    "showSoundcloud": "https://soundcloud.com/visual_rhythms"
   },
   "hero": {
     "kicker": "Collectif · Émission · Événements — Lyon",
