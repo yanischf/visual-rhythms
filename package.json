@@ -1,0 +1,14 @@
+{
+  "name": "visual-rhythms",
+  "private": true,
+  "type": "module",
+  "description": "Site vitrine Visual Rhythms : HTML statique g\u00e9n\u00e9r\u00e9 sans d\u00e9pendance.",
+  "scripts": {
+    "build": "node build.mjs",
+    "serve": "node serve.mjs",
+    "dev": "node build.mjs && node serve.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

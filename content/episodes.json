@@ -1,0 +1,16 @@
+[
+  { "number": 32, "dj": "Stepanov", "style": "techno", "date": "2026-03", "duration": "64:12", "url": "", "artwork": "" },
+  { "number": 27, "dj": "D3", "style": "techno", "date": "2025-10", "duration": "58:40", "url": "", "artwork": "" },
+  { "number": 31, "dj": "Yayo", "style": "ukg", "date": "2026-02", "duration": "61:05", "url": "", "artwork": "" },
+  { "number": 24, "dj": "Bouazza", "style": "ukg", "date": "2025-07", "duration": "55:30", "url": "", "artwork": "" },
+  { "number": 30, "dj": "Liut", "style": "prog", "date": "2026-01", "duration": "72:18", "url": "", "artwork": "" },
+  { "number": 26, "dj": "Stepanov", "style": "prog", "date": "2025-09", "duration": "66:02", "url": "", "artwork": "" },
+  { "number": 21, "dj": "Ernest", "style": "prog", "date": "2025-04", "duration": "60:44", "url": "", "artwork": "" },
+  { "number": 29, "dj": "Quarante et un", "style": "breaks", "date": "2025-12", "duration": "59:10", "url": "", "artwork": "" },
+  { "number": 22, "dj": "Yayo", "style": "breaks", "date": "2025-05", "duration": "57:26", "url": "", "artwork": "" },
+  { "number": 28, "dj": "Maïa Neel", "style": "electronica", "date": "2025-11", "duration": "63:47", "url": "", "artwork": "" },
+  { "number": 23, "dj": "Liut", "style": "electronica", "date": "2025-06", "duration": "61:20", "url": "", "artwork": "" },
+  { "number": 25, "dj": "Ernest", "style": "acid", "date": "2025-08", "duration": "62:00", "url": "", "artwork": "" },
+  { "number": 20, "dj": "D3", "style": "acid", "date": "2025-03", "duration": "58:15", "url": "", "artwork": "" },
+  { "number": 19, "dj": "Maïa Neel", "style": "ambient", "date": "2025-02", "duration": "74:33", "url": "", "artwork": "" }
+]

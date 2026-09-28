@@ -1,0 +1,53 @@
+{
+  "name": "Visual Rhythms",
+  "url": "https://visual-rhythms.net",
+  "lang": "fr",
+  "email": "contact@visual-rhythms.net",
+  "city": "Lyon",
+  "description": "Visual Rhythms est un collectif de DJs basé à Lyon et une émission mensuelle de podcasts sur la webradio Radio Béguin. Progressive, breaks, trance, acid, electro, techno, ambient : une vision ouverte et hybride des musiques électroniques.",
+  "links": {
+    "instagram": "",
+    "soundcloud": "",
+    "facebook": "",
+    "showSoundcloud": ""
+  },
+  "hero": {
+    "kicker": "Collectif · Émission · Événements — Lyon",
+    "title": "Nous explorons les possibilités des musiques électroniques.",
+    "image": "",
+    "imageAlt": "Visuel Visual Rhythms",
+    "imagePlaceholder": "Visuel chrome du logo / photo floue de soirée"
+  },
+  "gallery": {
+    "photos": [
+      { "src": "", "alt": "Photo de soirée Visual Rhythms" },
+      { "src": "", "alt": "Photo de soirée Visual Rhythms" },
+      { "src": "", "alt": "Photo de soirée Visual Rhythms" }
+    ],
+    "venues": ["Le Sucre", "Super 5", "Terminal", "Groom", "Loupika", "Heat", "La Bobine", "Périscope", "DV1", "Le Croiseur"]
+  },
+  "quote": "« À l'heure où certains ont laissé tomber leur rôle de défricheur, où la musique devient excessivement formatée, ultra catégorisée et où l'emballage semble être devenu bien plus important que le contenu… »",
+  "approach": {
+    "title": "Visual Rhythms s'inspire humblement de cet état d'esprit.",
+    "text": "Nous portons une vision ouverte, plurielle et hybride de la musique. Nous proposons une esthétique musicale qui mêle groove, émotions, psychédélisme et percussions, d'hier et d'aujourd'hui."
+  },
+  "stats": [
+    { "label": "Expérience", "value": "16 ans", "text": "De Lyon à Montréal en passant par Paris, Berlin et Amsterdam, nous avons écouté ce qu'il y a de meilleur !" },
+    { "label": "Scène", "value": "+600 gigs", "text": "Nous avons eu la chance de jouer sur de multiples configurations, en France comme à l'étranger. Nous savons nous adapter aux lieux et à l'énergie du public." },
+    { "label": "Studio", "value": "+60 podcasts", "text": "Des podcasts pour des labels et collectifs, une résidence sur une webradio : ambient, techno, house, progressive…" }
+  ],
+  "show": {
+    "name": "Visual Rhythms Show",
+    "station": "Radio Béguin",
+    "frequency": "Mensuel",
+    "text": "Une exploration entre Progressive, Breaks, Trance, Acid, Electro… Nous invitons des artistes à partager leur vision à travers des sets éclectiques qui transcendent les genres et les époques.",
+    "intro": "Une série de podcasts sur la webradio Radio Béguin. Le mot d'ordre : exploration des musiques électroniques club d'aujourd'hui et d'hier.",
+    "image": "",
+    "imageAlt": "Visuel de l'émission Visual Rhythms Show",
+    "seasons": [
+      { "title": "Saison 3 — w. Stepanov", "years": "2024 / 2025", "tracks": "2 tracks", "url": "" },
+      { "title": "Saison 2 — w. Stepanov", "years": "2023 / 2024", "tracks": "4 tracks", "url": "" },
+      { "title": "Saison 1 — Invités du collectif", "years": "2022 / 2023", "tracks": "— tracks", "url": "" }
+    ]
+  }
+}

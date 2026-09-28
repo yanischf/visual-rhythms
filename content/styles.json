@@ -1,0 +1,9 @@
+[
+  { "id": "techno", "label": "Techno", "color": "#7cf0c8", "tint": ["124,240,200", "143,124,255"] },
+  { "id": "ukg", "label": "UK garage", "color": "#ff8ad1", "tint": ["255,138,209", "109,224,255"] },
+  { "id": "prog", "label": "Progressive / Trance", "color": "#b9f56a", "tint": ["185,245,106", "247,215,116"] },
+  { "id": "breaks", "label": "Breakbeat", "color": "#8f7cff", "tint": ["143,124,255", "255,138,209"] },
+  { "id": "electronica", "label": "Electronica", "color": "#6de0ff", "tint": ["109,224,255", "124,240,200"] },
+  { "id": "acid", "label": "Acid-house", "color": "#f7d774", "tint": ["247,215,116", "255,138,209"] },
+  { "id": "ambient", "label": "Ambient", "color": "#b39cff", "tint": ["143,124,255", "109,224,255"] }
+]
