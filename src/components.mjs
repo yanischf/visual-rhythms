@@ -12,8 +12,8 @@ export function player({ title, dj, djHref, src, srcDatetime, duration, url, art
   const djHtml = dj ? (djHref ? `<a href="${esc(djHref)}">${esc(dj)}</a>` : esc(dj)) : '';
   const srcHtml = srcDatetime ? `<time datetime="${esc(srcDatetime)}">${esc(src)}</time>` : esc(src || '');
   const wave = compact
-    ? waveform({ seed, bars: 200, barW: 2, gap: 2, height: 34 })
-    : waveform({ seed, bars: 190, barW: 3, gap: 2, height: 60 });
+    ? waveform({ seed, bars: 300, barW: 2, gap: 2, height: 34 })
+    : waveform({ seed, bars: 280, barW: 3, gap: 2, height: 60 });
   const leftHtml = left ? esc(left) : '<span data-elapsed>0:00</span>';
   return `<li class="card tint player${compact ? ' player--sm' : ''}" style="--t1:${tint[0]};--t2:${tint[1]}" data-player>
 <div class="player-art">${media({ src: artwork, alt: `Artwork — ${title}`, placeholder: 'Artwork', rel, todoKey: todoKey ? ['Image : artwork', todoKey] : undefined })}</div>
