@@ -74,10 +74,10 @@ export function home({ site, djs, events, episodes, latestUrl }) {
   const project = (p) =>
     `<li><strong>${esc(p.name)}</strong>${p.years ? ` <span class="muted">(${esc(p.years)})</span>` : ''} : ${esc(p.text)}</li>`;
 
-  // Mosaïque photos en rangées complètes de 4 colonnes : 2×2 à gauche puis 2×2 à droite.
-  const GAL = ['span-2x2', '', '', 'span-2', '', '', 'span-2x2', 'span-2'];
+  // Mosaïque photos : chaque photo choisit sa case (`size`), comme sur les pages DJ.
+  const SIZE = { large: 'span-2x2', tall: 'span-tall', wide: 'span-2', banner: 'span-4', small: '' };
   const photos = g.photos
-    .map((p, i) => `<figure class="card card--media ${GAL[i % GAL.length]}">${media({ src: p.src, alt: p.alt, placeholder: 'Photo soirée' })}</figure>`)
+    .map((p) => `<figure class="card card--media ${SIZE[p.size] || ''}">${media({ src: p.src, alt: p.alt, placeholder: 'Photo soirée', position: p.position })}</figure>`)
     .join('\n');
   const posters = (g.posters || [])
     .map((p) => `<li class="card card--media poster">${media({ src: p.src, alt: p.alt, placeholder: 'Affiche' })}</li>`)
@@ -176,7 +176,7 @@ ${roster}
 
 <section class="section" id="galerie" data-reveal aria-labelledby="galerie-title">
 <div class="section-head"><h2 class="section-title" id="galerie-title">Galerie</h2><span class="label muted">${g.photos.length} photos · ${(g.posters || []).length} affiches</span></div>
-<div class="mosaic">
+<div class="mosaic mosaic--photo">
 ${photos}
 </div>
 <ul class="posters">

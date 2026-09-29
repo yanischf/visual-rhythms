@@ -106,7 +106,7 @@ ${players}
 
 <section class="section" data-reveal aria-labelledby="photos-title">
 <div class="section-head"><h2 class="section-title" id="photos-title">Photos</h2><span class="label muted">${photos.length} visuels</span></div>
-<div class="mosaic mosaic--artist">
+<div class="mosaic mosaic--photo">
 ${mosaic}
 </div>
 </section>

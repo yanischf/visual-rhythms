@@ -22,35 +22,46 @@
     "photos": [
       {
         "src": "img/soirees/quai-3.jpg",
-        "alt": "Soirée au Quai 3, public sur le dancefloor"
+        "alt": "Soirée au Quai 3, public sur le dancefloor",
+        "size": "large",
+        "position": "50% 45%"
       },
       {
         "src": "img/soirees/zone-chill-les-peris-2020.jpg",
-        "alt": "Zone chill, fête aux Péris, août 2020"
+        "alt": "Zone chill, fête aux Péris, août 2020",
+        "size": "small"
       },
       {
         "src": "img/soirees/soiree-chapiteau.jpg",
-        "alt": "Soirée sous chapiteau, public qui danse"
+        "alt": "Soirée sous chapiteau, public qui danse",
+        "size": "small"
       },
       {
         "src": "img/soirees/dimanches-pasithee-paradox.jpg",
-        "alt": "Les dimanches de Pasithée #2 au Paradox, 2019-2020"
+        "alt": "Les dimanches de Pasithée #2 au Paradox, 2019-2020",
+        "size": "small"
       },
       {
         "src": "img/soirees/performance.jpg",
-        "alt": "Performance dansée devant une projection"
+        "alt": "Performance dansée devant une projection",
+        "size": "small",
+        "position": "35% 50%"
       },
       {
         "src": "img/soirees/open-air-fort-superposition-2020.jpg",
-        "alt": "Open air au fort avec Superposition, juillet 2020"
+        "alt": "Open air au fort avec Superposition, juillet 2020",
+        "size": "small"
       },
       {
         "src": "img/soirees/la-java-superposition.jpg",
-        "alt": "DJ set en b2b à La Java (Superposition)"
+        "alt": "DJ set en b2b à La Java (Superposition)",
+        "size": "small"
       },
       {
         "src": "img/soirees/terrasse-ecam-2021.jpg",
-        "alt": "Scène chill, festival de la Terrasse de l'ECAM, août 2021"
+        "alt": "Scène chill, festival de la Terrasse de l'ECAM, août 2021",
+        "size": "wide",
+        "position": "50% 55%"
       }
     ],
     "posters": [
