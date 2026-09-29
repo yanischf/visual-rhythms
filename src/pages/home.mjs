@@ -61,6 +61,15 @@ export function home({ site, djs, events, episodes, latestUrl }) {
     })
     .join('\n');
 
+  // Carrousel des lieux : la liste est doublée pour boucler sans à-coup (la copie est masquée aux lecteurs d'écran).
+  const venueItems = g.venues
+    .map((v) =>
+      v.logo
+        ? `<li class="venue"><img src="${esc(v.logo)}" alt="${esc(v.name)}" loading="lazy" decoding="async" height="56"></li>`
+        : `<li class="venue venue--text">${esc(v.name)}</li>`
+    )
+    .join('');
+
   const formats = site.formats.items.map((f) => `<li>${esc(f)}</li>`).join('');
   const project = (p) =>
     `<li><strong>${esc(p.name)}</strong>${p.years ? ` <span class="muted">(${esc(p.years)})</span>` : ''} : ${esc(p.text)}</li>`;
@@ -100,7 +109,7 @@ ${blob('width:620px;height:620px;left:-180px;top:-240px;opacity:.75;--dur:17s', 
 ${datesCard({ events, djsBySlug })}
 <div class="gallery">
 ${gallery}
-<a class="card gallery-note" href="#galerie"><strong>Galerie <span aria-hidden="true">↓</span></strong><span>${g.venues.map(esc).join(' · ')}</span></a>
+<a class="card gallery-note" href="#galerie"><strong>Galerie <span aria-hidden="true">↓</span></strong><span>${g.venues.map((v) => esc(v.name)).join(' · ')}</span></a>
 </div>
 </section>
 
@@ -115,6 +124,16 @@ ${gallery}
 
 <section class="row g-three" data-reveal aria-label="Visual Rhythms en chiffres">
 ${stats}
+</section>
+
+<section class="row" data-reveal aria-labelledby="venues-title">
+<div class="card venues">
+<div class="venues-head"><h2 class="label" id="venues-title">Nous avons eu le plaisir de jouer dans ces lieux</h2><span class="label muted">${g.venues.length} lieux</span></div>
+<div class="marquee">
+<ul class="marquee-track">${venueItems}</ul>
+<ul class="marquee-track" aria-hidden="true">${venueItems}</ul>
+</div>
+</div>
 </section>
 
 <section class="row g-half" data-reveal aria-labelledby="formats-title">

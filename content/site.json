@@ -88,18 +88,54 @@
       }
     ],
     "venues": [
-      "Le Sucre",
-      "Super 5",
-      "Terminal",
-      "Groom",
-      "Loupika",
-      "Heat",
-      "La Bobine",
-      "Périscope",
-      "DV1",
-      "Le Croiseur",
-      "La Kulture",
-      "Le Comptoir Général"
+      {
+        "name": "Le Sucre",
+        "logo": ""
+      },
+      {
+        "name": "Super 5",
+        "logo": "img/lieux/super-5.png"
+      },
+      {
+        "name": "Terminal",
+        "logo": "img/lieux/terminal.png"
+      },
+      {
+        "name": "Groom",
+        "logo": "img/lieux/groom.png"
+      },
+      {
+        "name": "Loupika",
+        "logo": "img/lieux/loupika.png"
+      },
+      {
+        "name": "Heat",
+        "logo": "img/lieux/heat.png"
+      },
+      {
+        "name": "La Bobine",
+        "logo": "img/lieux/la-bobine.png"
+      },
+      {
+        "name": "Périscope",
+        "logo": "img/lieux/periscope.png"
+      },
+      {
+        "name": "DV1",
+        "logo": "img/lieux/dv1.png"
+      },
+      {
+        "name": "Le Croiseur",
+        "logo": "img/lieux/le-croiseur.png"
+      },
+      {
+        "name": "La Kulture",
+        "logo": "img/lieux/la-kulture.png"
+      },
+      {
+        "name": "Le Comptoir Général",
+        "logo": "img/lieux/le-comptoir-general.png"
+      }
     ]
   },
   "quote": "« À l'heure où certains ont laissé tomber leur rôle de défricheur, où la musique devient excessivement formatée, ultra catégorisée et où l'emballage semble être devenu bien plus important que le contenu. Nous devons explorer sans préjugés, sans limite, sans œillère et sans idées préconçues. »",

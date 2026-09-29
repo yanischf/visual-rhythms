@@ -280,7 +280,7 @@ ${site.formats.items.map((f) => `- ${f}`).join('\n')}
 
 ${[...site.projects.current, ...site.projects.past].map((p) => `- ${p.name}${p.years ? ` (${p.years})` : ''} : ${p.text}`).join('\n')}
 
-Lieux : ${site.gallery.venues.join(', ')}.
+Lieux : ${site.gallery.venues.map((v) => v.name).join(', ')}.
 
 ## DJs
 
