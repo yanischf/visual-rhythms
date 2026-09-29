@@ -3,10 +3,15 @@
     "slug": "stepanov",
     "name": "Stepanov",
     "role": "Résident · Lyon",
-    "tagline": "progressive · breaks",
-    "styles": ["UK garage", "Progressive", "Trance", "Techno", "Breakbeat", "Electronica", "Acid-house"],
-    "photo": "",
-    "portrait": "",
+    "tagline": "uk garage · progressive",
+    "styles": [
+      "UK garage",
+      "Progressive",
+      "Techno UK",
+      "Techno 90’s / 2000’s"
+    ],
+    "photo": "img/djs/stepanov/hero.jpg",
+    "portrait": "img/djs/stepanov/portrait.jpg",
     "lead": "Stepanov a découvert les musiques électroniques avec d'un côté la Techno minimale de Marc Houle, Magda, Gaiser et Richie Hawtin du label Minus ; et de l'autre la néo-trance et l'electronica de Nathan Fake, Fairmont, James Holden, Caribou et Four Tet.",
     "bio": [
       "Des univers totalement différents qui ont forgé le goût de Stepanov pour les esthétiques affûtées. C'est ce qu'il essaie aujourd'hui de retranscrire dans ses sets : UK garage, Progressive, Trance, Techno, Breakbeat, Electronica, Acid-house… Stepanov aime explorer, découvrir et surprendre ! Il ne s'enferme jamais dans un style et garde une oreille curieuse.",
@@ -17,12 +22,51 @@
       "Basé à Lyon, il a eu l'opportunité de jouer dans différents clubs, lieux culturels et festivals de la ville et de la région : Le Sucre, La Bobine, Super 5, Heat, Terminal, Groom, Extra Nuits sonores, la Terrasse de l'ECAM…"
     ],
     "tracks": [
-      { "title": "Visual Rhythms Show #14", "source": "Visual Rhythms Show · 2025", "duration": "62:00", "url": "", "artwork": "" },
-      { "title": "Visual Rhythms Show #11", "source": "Visual Rhythms Show · 2025", "duration": "62:00", "url": "", "artwork": "" },
-      { "title": "Bains sonores — ambient set", "source": "Pasithée · 2024", "duration": "62:00", "url": "", "artwork": "" }
+      {
+        "title": "Visual Rhythms Show — 26.10.23",
+        "source": "Visual Rhythms Show · 2023",
+        "duration": "45:46",
+        "url": "https://soundcloud.com/radiobeguin/visual-rhythms-stepanov-261023",
+        "artwork": "https://i1.sndcdn.com/artworks-F6HNySRgzcipbYN0-hteOwg-t300x300.jpg"
+      },
+      {
+        "title": "CJACT.MIX.008",
+        "source": "Criminal Justice Act · 2023",
+        "duration": "42:10",
+        "url": "https://soundcloud.com/criminaljusticeact/cjactmix008-stepanov",
+        "artwork": "https://i1.sndcdn.com/artworks-ulIMSarVAEyr65OG-Q3GuOg-t300x300.jpg"
+      },
+      {
+        "title": "Podcast°56",
+        "source": "Dürüm Records · 2023",
+        "duration": "48:10",
+        "url": "https://soundcloud.com/durum-records/podcast56-stepanov",
+        "artwork": "https://i1.sndcdn.com/artworks-WxpZFxDl5kY9Nk6Y-M1LEzA-t300x300.jpg"
+      }
     ],
-    "photos": [],
-    "links": { "soundcloud": "", "instagram": "", "ra": "" },
+    "photos": [
+      {
+        "src": "img/djs/stepanov/1.jpg",
+        "alt": "Stepanov et liut en DJ set en plein air"
+      },
+      {
+        "src": "img/djs/stepanov/2.jpg",
+        "alt": "Stepanov en b2b à La Java (Superposition)"
+      },
+      {
+        "src": "img/djs/stepanov/3.jpg",
+        "alt": "Open air au fort (Superposition), juillet 2020"
+      },
+      {
+        "src": "img/djs/stepanov/4.jpg",
+        "alt": "Stepanov sur scène, lumières orange"
+      }
+    ],
+    "links": {
+      "soundcloud": "https://soundcloud.com/stepanov-visual-rhythms",
+      "instagram": "https://www.instagram.com/stepanov_dj/",
+      "ra": ""
+    },
     "rider": "",
     "presskit": ""
   },
@@ -30,15 +74,66 @@
     "slug": "liut",
     "name": "liut",
     "role": "Résident · Lyon",
-    "tagline": "acid · electro",
-    "styles": ["Acid-house", "Electro"],
-    "photo": "",
-    "portrait": "",
-    "lead": "",
-    "bio": [],
-    "tracks": [],
-    "photos": [],
-    "links": { "soundcloud": "", "instagram": "", "ra": "" },
+    "tagline": "progressive · trance",
+    "styles": [
+      "Progressive",
+      "Trance",
+      "Hard house",
+      "Deep / Dub techno"
+    ],
+    "photo": "img/djs/liut/hero.jpg",
+    "portrait": "img/djs/liut/portrait.jpg",
+    "lead": "liut mixe depuis plus de 20 ans. Il a fait ses armes à Grenoble avant de s'installer durablement à Lyon. Du feu DV1 au Ninkasi Kao Gerland, en passant par la majorité des clubs de la ville, il a fait vibrer de nombreuses scènes et open airs. Son énergie l'a même mené jusqu'à Berlin.",
+    "bio": [
+      "Explorateur dans l'âme, liut expérimente autant dans sa vie que dans sa pratique musicale. Producteur, DJ, organisateur… Sa démarche est animée par un même élan : découvrir, tester, connecter.",
+      "Il conçoit la musique et la fête comme des rituels contemporains : des moments privilégiés où l’on se retrouve, où l’on fait corps, portés par le mouvement.",
+      "Ce rapport au mouvement est au cœur de sa personnalité : il le cultive autant dans sa pratique sportive que dans ses projets, sa vie quotidienne, sa discipline musicale et ses mixs.",
+      "Mouvement physique, bien sûr : celui du rythme, de la danse et de la mobilité… Mais aussi mouvement énergétique, qu'il cherche dans le sound design des morceaux qu'il sélectionne. Un mouvement en devenir, jamais figé, toujours en tension.",
+      "Avec liut, la recherche ne s’arrête jamais : elle s’écoute, se danse, se vit."
+    ],
+    "tracks": [
+      {
+        "title": "Transurfing .2 — Second Dance",
+        "source": "liut · 2025",
+        "duration": "1:24:02",
+        "url": "https://soundcloud.com/subvers-moment/transurfing-2",
+        "artwork": "https://i1.sndcdn.com/artworks-JxsvruwaBWtcjyqF-MoCCqA-t300x300.png"
+      },
+      {
+        "title": "Stepanov & liut @ Unité Centrale",
+        "source": "Concordance Festival · 2023",
+        "duration": "1:03:26",
+        "url": "https://soundcloud.com/radiobeguin/le-beguin-pour-stepanov-liut-unite-centrale-110623",
+        "artwork": "https://i1.sndcdn.com/artworks-4VUuW3kJvjTFzMwM-uvn7hA-t300x300.jpg"
+      },
+      {
+        "title": "La Messe — liut",
+        "source": "La Messe · 2023",
+        "duration": "1:06:13",
+        "url": "https://soundcloud.com/radiobeguin/la-messe-liut-151023",
+        "artwork": "https://i1.sndcdn.com/artworks-KN1rTfb4biaskRz4-6dPTPQ-t300x300.jpg"
+      }
+    ],
+    "photos": [
+      {
+        "src": "img/djs/liut/1.jpg",
+        "alt": "liut aux platines en terrasse"
+      },
+      {
+        "src": "img/djs/liut/2.jpg",
+        "alt": "liut aux platines",
+        "position": "50% 30%"
+      },
+      {
+        "src": "img/djs/liut/3.jpg",
+        "alt": "Portrait de liut dans un miroir"
+      }
+    ],
+    "links": {
+      "soundcloud": "https://soundcloud.com/subvers-moment",
+      "instagram": "",
+      "ra": ""
+    },
     "rider": "",
     "presskit": ""
   },
@@ -46,15 +141,53 @@
     "slug": "yayo-no-ero",
     "name": "Yayo no Ero",
     "role": "Résident · Lyon",
-    "tagline": "trance · idm",
-    "styles": ["Trance", "IDM"],
-    "photo": "",
-    "portrait": "",
-    "lead": "",
-    "bio": [],
-    "tracks": [],
-    "photos": [],
-    "links": { "soundcloud": "", "instagram": "", "ra": "" },
+    "tagline": "house · uk garage",
+    "styles": [
+      "House",
+      "UK garage",
+      "Progressive",
+      "Tech house"
+    ],
+    "photo": "img/djs/yayo-no-ero/hero.jpg",
+    "portrait": "img/djs/yayo-no-ero/portrait.jpg",
+    "lead": "yayo.no.ero a arpenté les clubs parisiens et les festivals européens avec une mission : la recherche de la vibe parfaite, mélange subtil de house, de groove et d'énergie partagée !",
+    "bio": [
+      "Il a grandi dans un bain de musique, bercé par les sons de hip hop, de soul et de funk que son frère et sa sœur faisaient tourner en boucle. Ce bagage familial, fait de samples, de voix, de claps et de basses, imprègne aujourd’hui son approche du mix.",
+      "yayo.no.ero cherche des sons qui résonnent, qui transportent et qui font danser. Ce qu’il poursuit avant tout, c’est l’énergie, la rencontre, la magie du dancefloor comme lieu vivant et collectif.",
+      "Derrière les platines, il convoque une ambiance funk, une voix qui accroche, un groove intemporel, des harmonies qui ouvrent l’imaginaire.",
+      "Sa posture est à la fois vintage et vibrante, traversée par une forme de dandysme assumé et une discrétion habitée. Une façon bien à lui d'être présent, sans jamais chercher la lumière."
+    ],
+    "tracks": [
+      {
+        "title": "Visual Rhythms Show — Yayo no Ero",
+        "source": "Visual Rhythms Show · 2025",
+        "duration": "1:11:29",
+        "url": "https://soundcloud.com/radiobeguin/visual-rhythms-s4-e1",
+        "artwork": "https://i1.sndcdn.com/artworks-kFR2nYyc2Muf7Fly-HT68gg-t300x300.png"
+      }
+    ],
+    "photos": [
+      {
+        "src": "img/djs/yayo-no-ero/1.jpg",
+        "alt": "Portrait de Yayo no Ero",
+        "position": "50% 25%"
+      },
+      {
+        "src": "img/djs/yayo-no-ero/2.jpg",
+        "alt": "Yayo no Ero en DJ set, néons",
+        "position": "50% 40%"
+      },
+      {
+        "src": "img/djs/yayo-no-ero/3.jpg",
+        "alt": "Yayo no Ero en b2b",
+        "position": "50% 35%"
+      }
+    ],
+    "links": {
+      "soundcloud": "",
+      "instagram": "",
+      "ra": ""
+    },
     "rider": "",
     "presskit": ""
   },
@@ -62,15 +195,45 @@
     "slug": "bouazza",
     "name": "Bouazza",
     "role": "Résident · Lyon",
-    "tagline": "house · groove",
-    "styles": ["House", "Groove"],
-    "photo": "",
-    "portrait": "",
-    "lead": "",
-    "bio": [],
+    "tagline": "house · hip hop",
+    "styles": [
+      "House",
+      "Hip hop",
+      "Tech house",
+      "Electro"
+    ],
+    "photo": "img/djs/bouazza/hero.jpg",
+    "portrait": "img/djs/bouazza/portrait.jpg",
+    "lead": "Bouazza aime jouer, au sens premier du terme : tester des choses, tenter des enchaînements, lancer la partie et voir ce qui se passe.",
+    "bio": [
+      "Il passe des classiques du hip-hop français à des gros bangers electro grâce à sa sélection riche et vivante.",
+      "Jouer pour lui, c’est aussi faire entrer la performance live dans la pratique du DJ set. C’est ce qu’il fait notamment avec Jérémy Chignec : flûtiste et musicien spécialiste de l’improvisation, qui combine flûte traversière, looper, beatbox et pédales d’effets.",
+      "Jouer pour Bouazza, c’est aussi apprendre. Il s’initie aux percussions et intègre ses apprentissages dans ses sets : plus de rythmes et de groove sous toutes ses formes.",
+      "Avec Bouazza, vous ne vous ennuierez pas !"
+    ],
     "tracks": [],
-    "photos": [],
-    "links": { "soundcloud": "", "instagram": "", "ra": "" },
+    "photos": [
+      {
+        "src": "img/djs/bouazza/1.jpg",
+        "alt": "Bouazza et Jérémy Chignec (flûte) sur scène",
+        "position": "50% 30%"
+      },
+      {
+        "src": "img/djs/bouazza/2.jpg",
+        "alt": "Bouazza aux platines",
+        "position": "50% 35%"
+      },
+      {
+        "src": "img/djs/bouazza/3.jpg",
+        "alt": "Bouazza en DJ set avec flûte live",
+        "position": "50% 35%"
+      }
+    ],
+    "links": {
+      "soundcloud": "",
+      "instagram": "",
+      "ra": ""
+    },
     "rider": "",
     "presskit": ""
   },
@@ -78,15 +241,53 @@
     "slug": "d3",
     "name": "D3",
     "role": "Résident · Lyon",
-    "tagline": "techno",
-    "styles": ["Techno"],
-    "photo": "",
-    "portrait": "",
-    "lead": "",
-    "bio": [],
-    "tracks": [],
-    "photos": [],
-    "links": { "soundcloud": "", "instagram": "", "ra": "" },
+    "tagline": "dub techno · early trance",
+    "styles": [
+      "Deep & Dub techno",
+      "Progressive",
+      "Early trance"
+    ],
+    "photo": "img/djs/d3/hero.jpg",
+    "portrait": "img/djs/d3/portrait.jpg",
+    "lead": "D3 a construit sa pratique du mix sur les piliers de la musique électronique : immersion, répétition, transe et technologie.",
+    "bio": [
+      "Ses sets avancent comme une architecture sonore, construite avec précision, où chaque couche trouve sa place et son mouvement.",
+      "Cette exigence ne donne pas une musique froide ou clinique. Au contraire, D3 puise dans toute la palette de groove et de psychédélisme de la Techno en passant par l’early trance, la progressive.",
+      "Avec lui, le dancefloor devient une expérience du temps long et de l’évolution : une montée patiente où le corps s’accorde au son."
+    ],
+    "tracks": [
+      {
+        "title": "Stepanov invite D3",
+        "source": "Visual Rhythms Show · 2024",
+        "duration": "2:01:26",
+        "url": "https://soundcloud.com/radiobeguin/visual-rhythms-show-stepanov-invite-d3",
+        "artwork": "https://i1.sndcdn.com/artworks-zSyxXxi75gXuOmJz-ywYnFA-t300x300.jpg"
+      },
+      {
+        "title": "D3 invite cis0o0o0",
+        "source": "Visual Rhythms Show · 2026",
+        "duration": "2:05:24",
+        "url": "https://soundcloud.com/radiobeguin/visual-rhythms-o-d3-invite",
+        "artwork": "https://i1.sndcdn.com/artworks-X1C2dMWZbcK32zf4-cAUIOg-t300x300.png"
+      }
+    ],
+    "photos": [
+      {
+        "src": "img/djs/d3/1.jpg",
+        "alt": "D3 aux platines, lumière bleue",
+        "position": "50% 30%"
+      },
+      {
+        "src": "img/djs/d3/2.jpg",
+        "alt": "Portrait de D3 en noir et blanc",
+        "position": "50% 25%"
+      }
+    ],
+    "links": {
+      "soundcloud": "",
+      "instagram": "",
+      "ra": ""
+    },
     "rider": "",
     "presskit": ""
   },
@@ -94,15 +295,56 @@
     "slug": "ernest",
     "name": "Ernest",
     "role": "Résident · Lyon",
-    "tagline": "ambient · psyché",
-    "styles": ["Ambient", "Psyché"],
-    "photo": "",
-    "portrait": "",
-    "lead": "",
-    "bio": [],
-    "tracks": [],
-    "photos": [],
-    "links": { "soundcloud": "", "instagram": "", "ra": "" },
+    "tagline": "house · afro house",
+    "styles": [
+      "House",
+      "Afro house",
+      "Tech house",
+      "Minimal techno"
+    ],
+    "photo": "img/djs/ernest/hero.jpg",
+    "portrait": "img/djs/ernest/portrait.jpg",
+    "lead": "Amoureux de musique avant tout, Ernest creuse patiemment dans les couleurs locales et internationales, d’hier comme d’aujourd’hui.",
+    "bio": [
+      "Il cherche l’équilibre entre émotion et pulsation, entre chaleur et précision, pour tisser des sets où la house, la deep house, l’afro et la minimal deviennent un même courant. Un groove ample, une transe douce, une danse continue.",
+      "À l’origine du collectif montréalais The Ants en 2015, Ernest et ses complices ont fait vibrer clubs et lieux underground de Montréal, partageant l’affiche avec des artistes comme Jayda G, Cinthie, Camion Bazar, Ben Vedren, Dave Allison, Ouri, Vincent Lemieux, Ohm Hourani, Paolo Rocco, et de nombreux talents de la scène locale."
+    ],
+    "tracks": [
+      {
+        "title": "The Ants Mixtape 06",
+        "source": "The Ants · 2018",
+        "duration": "1:00:46",
+        "url": "https://www.mixcloud.com/TheAnts/the-ants-mixtape-06-ernest/",
+        "artwork": "https://thumbnailer.mixcloud.com/unsafe/300x300/extaudio/f/1/4/a/c12a-d478-4aea-8c76-7f34963db2e7"
+      },
+      {
+        "title": "The Ants and Friends 01",
+        "source": "The Ants · 2017",
+        "duration": "1:00:10",
+        "url": "https://www.mixcloud.com/TheAnts/the-ants-and-friends-01-102017-ernest/",
+        "artwork": "https://thumbnailer.mixcloud.com/unsafe/300x300/extaudio/3/3/c/4/b3c6-9e4d-4fb1-a3d1-6fbc709922f4"
+      }
+    ],
+    "photos": [
+      {
+        "src": "img/djs/ernest/1.jpg",
+        "alt": "Ernest aux platines chez un disquaire",
+        "position": "50% 25%"
+      },
+      {
+        "src": "img/djs/ernest/2.jpg",
+        "alt": "Ernest en club, public et guirlandes"
+      },
+      {
+        "src": "img/djs/ernest/3.jpg",
+        "alt": "Ernest en DJ set de nuit"
+      }
+    ],
+    "links": {
+      "soundcloud": "",
+      "instagram": "",
+      "ra": ""
+    },
     "rider": "",
     "presskit": ""
   }

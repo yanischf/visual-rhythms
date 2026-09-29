@@ -312,10 +312,13 @@ a.date-row--real:hover { background: var(--pill-h); }
 .gallery { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: var(--gap); }
 .gallery .card--media { min-height: 115px; }
 .gallery-note { padding: 18px 20px; display: flex; flex-direction: column; justify-content: flex-end; }
+a.gallery-note { transition: background-color .15s; }
+a.gallery-note:hover { background: var(--pill); }
 .gallery-note strong { font: 500 19px/1.1 var(--f-display); letter-spacing: -.02em; }
 .gallery-note span { margin-top: 6px; font: 300 10.5px/1.5 var(--f-text); color: rgba(var(--ink-rgb), .64); }
 
-.quote-card { padding: 32px 34px; display: flex; align-items: center; }
+.quote-card { margin: 0; padding: 32px 34px; display: flex; flex-direction: column; justify-content: center; }
+.quote-author { margin-top: 18px; font: 400 11px/1.4 var(--f-text); letter-spacing: .24em; text-transform: uppercase; color: var(--muted); }
 .quote-card blockquote { margin: 0; }
 .quote-card p {
   font: 500 26px/1.35 var(--f-display); letter-spacing: -.02em;
@@ -328,7 +331,7 @@ a.date-row--real:hover { background: var(--pill-h); }
 
 .stat { padding: 26px 26px 22px; }
 .stat .label { opacity: .7; letter-spacing: .2em; }
-.stat-value { margin: 16px 0 10px; font: 600 46px/1 var(--f-display); letter-spacing: -.035em; }
+.stat-value { margin: 16px 0 10px; font: 600 46px/1 var(--f-display); font-size: clamp(34px, 3.8vw, 46px); letter-spacing: -.035em; white-space: nowrap; }
 .stat-text { font: 300 12.5px/1.6 var(--f-text); color: var(--text-2); }
 
 .show-card {
@@ -378,6 +381,24 @@ a.date-row--real:hover { background: var(--pill-h); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pills .pill { background: rgba(243, 238, 252, .08); } }
 .pills .pill:hover { background: var(--ink); color: var(--inv); }
 .pill.is-disabled { opacity: .45; pointer-events: none; }
+
+/* Listes : formats et projets */
+.list-card { padding: 28px 30px; }
+.list-card > .label { opacity: .65; letter-spacing: .2em; margin-bottom: 14px; }
+.list-title { margin: 0 0 12px; font: 500 24px/1.1 var(--f-display); letter-spacing: -.02em; }
+.list-title--sub { margin-top: 24px; }
+.list-intro { margin-bottom: 16px; font: 300 13.5px/1.6 var(--f-text); color: var(--text-2); }
+.bullets { display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.bullets li { position: relative; padding-left: 18px; font: 300 13.5px/1.55 var(--f-text); color: var(--text-2); }
+.bullets li::before {
+  content: ""; position: absolute; left: 0; top: .5em; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--irid);
+}
+.bullets strong { font-weight: 500; color: var(--ink); }
+
+/* Galerie : affiches */
+.posters { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gap); margin: var(--gap) 0 0; padding: 0; list-style: none; }
+.poster { aspect-ratio: 16 / 9; }
 
 /* ---------- Lecteurs (artiste + émission) ---------- */
 .players { display: flex; flex-direction: column; gap: var(--gap); margin: 0; padding: 0; list-style: none; }
@@ -449,6 +470,7 @@ a.date-row--real:hover { background: var(--pill-h); }
 .mosaic .card { margin: 0; }
 .span-2 { grid-column: span 2; }
 .span-2x2 { grid-column: span 2; grid-row: span 2; }
+.span-4 { grid-column: 1 / -1; }
 
 .bio-card { padding: 38px 36px 32px; }
 .bio-lead {
@@ -549,6 +571,8 @@ a.date-row--real:hover { background: var(--pill-h); }
   .stat-value { font-size: 40px; }
   .book-title { font-size: 40px; }
   .mosaic { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 132px; }
+  .posters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .list-card { padding: 26px 24px; }
   .artist-hero { height: 380px; }
   .artist-hero-text { left: 22px; right: 22px; bottom: 22px; flex-direction: column; align-items: flex-start; gap: 16px; }
   .artist-tags { justify-content: flex-start; max-width: none; }

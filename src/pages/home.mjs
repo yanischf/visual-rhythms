@@ -33,7 +33,7 @@ ${rows}
 </div>`;
 }
 
-export function home({ site, djs, events, latestUrl }) {
+export function home({ site, djs, events, episodes, latestUrl }) {
   const djsBySlug = Object.fromEntries(djs.map((d) => [d.slug, d]));
   const g = site.gallery;
 
@@ -54,10 +54,24 @@ export function home({ site, djs, events, latestUrl }) {
 
   const seasons = site.show.seasons
     .map((s) => {
-      const href = s.url || 'emission.html';
+      const href = s.url || `emission.html#${s.id}`;
       const ext = s.url ? ' target="_blank" rel="noopener"' : '';
-      return `<a class="season" href="${esc(href)}"${ext}><span aria-hidden="true">▶</span><span class="season-title">${esc(s.title)}</span><span class="season-meta">${esc(s.years)}</span><span class="season-meta">${esc(s.tracks)}</span></a>`;
+      const n = episodes.filter((e) => e.season === s.id).length;
+      return `<a class="season" href="${esc(href)}"${ext}><span aria-hidden="true">▶</span><span class="season-title">${esc(s.title)}</span><span class="season-meta">${esc(s.years)}</span><span class="season-meta">${n} ${n > 1 ? 'épisodes' : 'épisode'}</span></a>`;
     })
+    .join('\n');
+
+  const formats = site.formats.items.map((f) => `<li>${esc(f)}</li>`).join('');
+  const project = (p) =>
+    `<li><strong>${esc(p.name)}</strong>${p.years ? ` <span class="muted">(${esc(p.years)})</span>` : ''} : ${esc(p.text)}</li>`;
+
+  // Mosaïque photos en rangées complètes de 4 colonnes : 2×2 à gauche puis 2×2 à droite.
+  const GAL = ['span-2x2', '', '', 'span-2', '', '', 'span-2x2', 'span-2'];
+  const photos = g.photos
+    .map((p, i) => `<figure class="card card--media ${GAL[i % GAL.length]}">${media({ src: p.src, alt: p.alt, placeholder: 'Photo soirée' })}</figure>`)
+    .join('\n');
+  const posters = (g.posters || [])
+    .map((p) => `<li class="card card--media poster">${media({ src: p.src, alt: p.alt, placeholder: 'Affiche' })}</li>`)
     .join('\n');
 
   const roster = djs
@@ -86,12 +100,12 @@ ${blob('width:620px;height:620px;left:-180px;top:-240px;opacity:.75;--dur:17s', 
 ${datesCard({ events, djsBySlug })}
 <div class="gallery">
 ${gallery}
-<div class="card gallery-note"><strong>Galerie</strong><span>${g.venues.map(esc).join(' · ')}</span></div>
+<a class="card gallery-note" href="#galerie"><strong>Galerie <span aria-hidden="true">↓</span></strong><span>${g.venues.map(esc).join(' · ')}</span></a>
 </div>
 </section>
 
 <section class="row g-quote" data-reveal aria-labelledby="approach-title">
-<div class="card quote-card"><blockquote><p>${esc(site.quote)}</p></blockquote></div>
+<figure class="card quote-card"><blockquote><p>${esc(site.quote)}</p></blockquote>${site.quoteAuthor ? `<figcaption class="quote-author">— ${esc(site.quoteAuthor)}</figcaption>` : ''}</figure>
 <div class="card approach">
 <p class="label">Notre approche</p>
 <h2 id="approach-title">${esc(site.approach.title)}</h2>
@@ -101,6 +115,22 @@ ${gallery}
 
 <section class="row g-three" data-reveal aria-label="Visual Rhythms en chiffres">
 ${stats}
+</section>
+
+<section class="row g-half" data-reveal aria-labelledby="formats-title">
+<div class="card list-card">
+<p class="label">Formats</p>
+<h2 class="list-title" id="formats-title">Des formats qui s’adaptent aux lieux et aux publics.</h2>
+<p class="list-intro">${esc(site.formats.intro)}</p>
+<ul class="bullets">${formats}</ul>
+</div>
+<div class="card tint tint-a list-card">
+<p class="label">Projets</p>
+<h2 class="list-title">En cours</h2>
+<ul class="bullets">${site.projects.current.map(project).join('')}</ul>
+<h2 class="list-title list-title--sub">Projets passés</h2>
+<ul class="bullets">${site.projects.past.map(project).join('')}</ul>
+</div>
 </section>
 
 <section class="row g-show" data-reveal aria-labelledby="show-title">
@@ -122,6 +152,16 @@ ${seasons}
 <div class="section-head roster-head"><h2 class="display" id="roster-title">Notre roster de DJs</h2><span class="label">${djs.length} artistes · ${esc(site.city)}</span></div>
 <ul class="roster">
 ${roster}
+</ul>
+</section>
+
+<section class="section" id="galerie" data-reveal aria-labelledby="galerie-title">
+<div class="section-head"><h2 class="section-title" id="galerie-title">Galerie</h2><span class="label muted">${g.photos.length} photos · ${(g.posters || []).length} affiches</span></div>
+<div class="mosaic">
+${photos}
+</div>
+<ul class="posters">
+${posters}
 </ul>
 </section>
 

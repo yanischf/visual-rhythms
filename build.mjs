@@ -10,7 +10,7 @@ import { layout } from './src/layout.mjs';
 import { home } from './src/pages/home.mjs';
 import { djPage } from './src/pages/dj.mjs';
 import { emission } from './src/pages/emission.mjs';
-import { normalize, monthLabel, isoDuration, todo } from './src/lib.mjs';
+import { dateLabel, isoDuration, todo } from './src/lib.mjs';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const OUT = join(ROOT, 'dist');
@@ -37,13 +37,8 @@ const [site, djs, episodes, events, styles] = await Promise.all([
 if (process.env.SITE_URL) site.url = process.env.SITE_URL.replace(/\/+$/, '');
 site.noindex = process.env.NOINDEX === '1';
 
-// Rattache un nom de DJ d'épisode (« Yayo », « Liut »…) à une fiche du roster.
-function findDj(name) {
-  const n = normalize(name);
-  return djs.find((d) => normalize(d.name) === n || normalize(d.name).startsWith(n + ' ')) || null;
-}
-
-const styleLabel = Object.fromEntries(styles.map((s) => [s.id, s.label]));
+const djsBySlug = Object.fromEntries(djs.map((d) => [d.slug, d]));
+const seasonTitle = Object.fromEntries(site.show.seasons.map((s) => [s.id, s.title]));
 const latest = [...episodes].sort((a, b) => b.date.localeCompare(a.date))[0];
 const latestUrl = latest?.url || 'emission.html';
 
@@ -108,7 +103,7 @@ pages.push({
         ...eventSchemas,
       ],
     },
-    body: home({ site, djs, events, latestUrl }),
+    body: home({ site, djs, events, episodes, latestUrl }),
   }),
 });
 
@@ -122,7 +117,7 @@ pages.push({
     path: 'emission.html',
     active: 'emission',
     title: `Émission — ${site.show.name}, podcasts électroniques | ${site.name}`,
-    description: `${site.show.intro} ${episodes.length} épisodes classés par style : ${styles.map((s) => s.label).join(', ')}.`,
+    description: `${site.show.intro} ${episodes.length} épisodes sur ${site.show.seasons.length} saisons, à écouter sur Soundcloud.`,
     ogImage: site.show.image,
     schema: {
       '@context': 'https://schema.org',
@@ -137,34 +132,34 @@ pages.push({
           author: { '@id': ORG_ID },
           ...(site.links.showSoundcloud ? { sameAs: [site.links.showSoundcloud] } : {}),
         },
-        ...episodes.map((e) => {
-          const dj = findDj(e.dj);
-          return {
-            '@type': 'PodcastEpisode',
-            name: `Visual Rhythms #${e.number}`,
-            episodeNumber: e.number,
-            datePublished: e.date,
-            genre: styleLabel[e.style],
-            timeRequired: isoDuration(e.duration),
-            partOfSeries: { '@id': SERIES_ID },
-            actor: { '@type': 'Person', name: dj ? dj.name : e.dj, ...(dj ? { url: `${site.url}/djs/${dj.slug}.html` } : {}) },
-            ...(e.url ? { url: e.url } : {}),
-          };
-        }),
+        ...episodes.map((e) => ({
+          '@type': 'PodcastEpisode',
+          name: `${site.show.name} — ${e.title}`,
+          datePublished: e.date,
+          timeRequired: isoDuration(e.duration),
+          partOfSeries: { '@id': SERIES_ID },
+          partOfSeason: { '@type': 'CreativeWorkSeason', name: seasonTitle[e.season] },
+          ...(e.djs?.length
+            ? { actor: e.djs.filter((s) => djsBySlug[s]).map((s) => ({ '@type': 'Person', name: djsBySlug[s].name, url: `${site.url}/djs/${s}.html` })) }
+            : {}),
+          ...(e.url ? { url: e.url } : {}),
+          ...(e.artwork ? { image: e.artwork } : {}),
+        })),
       ],
     },
-    body: emission({ site, styles, episodes, findDj }),
+    body: emission({ site, episodes, djsBySlug }),
   }),
 });
 
 // ---------- Pages DJ ----------
 for (const dj of djs) {
+  // Sans pistes renseignées, la page reprend les épisodes de l'émission où le DJ joue.
   const own = episodes
-    .filter((e) => findDj(e.dj)?.slug === dj.slug)
+    .filter((e) => e.djs?.includes(dj.slug))
     .sort((a, b) => b.date.localeCompare(a.date))
     .map((e) => ({
-      title: `Visual Rhythms #${e.number}`,
-      source: `${site.show.name} · ${monthLabel(e.date)}`,
+      title: e.title,
+      source: `${site.show.name} · ${dateLabel(e.date)}`,
       duration: e.duration,
       url: e.url,
       artwork: e.artwork,
@@ -253,7 +248,7 @@ Contact et booking : ${site.email}
 ## Pages
 
 - [Accueil](${site.url}/) : présentation du collectif, prochaines dates, chiffres clés, émission, roster, booking.
-- [Émission](${site.url}/emission.html) : ${site.show.name}, émission de podcasts (${site.show.frequency.toLowerCase()}). ${episodes.length} épisodes classés par style.
+- [Émission](${site.url}/emission.html) : ${site.show.name}, émission de podcasts (${site.show.frequency.toLowerCase()}). ${episodes.length} épisodes sur ${site.show.seasons.length} saisons.
 ${djs.map((d) => `- [${d.name}](${site.url}/djs/${d.slug}.html) : DJ résident (${d.styles.join(', ')}).`).join('\n')}
 
 ## Le collectif
@@ -266,14 +261,26 @@ ${site.stats.map((s) => `- ${s.label} : ${s.value}. ${s.text}`).join('\n')}
 
 ${site.show.text}
 
-${styles
-  .map((st) => {
-    const eps = episodes.filter((e) => e.style === st.id).sort((a, b) => b.date.localeCompare(a.date));
+${site.show.seasons
+  .map((s) => {
+    const eps = episodes.filter((e) => e.season === s.id).sort((a, b) => b.date.localeCompare(a.date));
     if (!eps.length) return '';
-    return `### ${st.label}\n${eps.map((e) => `- Visual Rhythms #${e.number} — ${findDj(e.dj)?.name || e.dj} (${monthLabel(e.date)}, ${e.duration})${e.url ? ` : ${e.url}` : ''}`).join('\n')}`;
+    return `### ${s.title} (${s.years})${s.url ? ` : ${s.url}` : ''}\n${eps.map((e) => `- ${e.title} (${dateLabel(e.date)}, ${e.duration})${e.url ? ` : ${e.url}` : ''}`).join('\n')}`;
   })
   .filter(Boolean)
   .join('\n\n')}
+
+## Formats
+
+${site.formats.intro}
+
+${site.formats.items.map((f) => `- ${f}`).join('\n')}
+
+## Projets
+
+${[...site.projects.current, ...site.projects.past].map((p) => `- ${p.name}${p.years ? ` (${p.years})` : ''} : ${p.text}`).join('\n')}
+
+Lieux : ${site.gallery.venues.join(', ')}.
 
 ## DJs
 

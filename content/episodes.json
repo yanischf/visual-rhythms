@@ -1,16 +1,215 @@
 [
-  { "number": 32, "dj": "Stepanov", "style": "techno", "date": "2026-03", "duration": "64:12", "url": "", "artwork": "" },
-  { "number": 27, "dj": "D3", "style": "techno", "date": "2025-10", "duration": "58:40", "url": "", "artwork": "" },
-  { "number": 31, "dj": "Yayo", "style": "ukg", "date": "2026-02", "duration": "61:05", "url": "", "artwork": "" },
-  { "number": 24, "dj": "Bouazza", "style": "ukg", "date": "2025-07", "duration": "55:30", "url": "", "artwork": "" },
-  { "number": 30, "dj": "Liut", "style": "prog", "date": "2026-01", "duration": "72:18", "url": "", "artwork": "" },
-  { "number": 26, "dj": "Stepanov", "style": "prog", "date": "2025-09", "duration": "66:02", "url": "", "artwork": "" },
-  { "number": 21, "dj": "Ernest", "style": "prog", "date": "2025-04", "duration": "60:44", "url": "", "artwork": "" },
-  { "number": 29, "dj": "Quarante et un", "style": "breaks", "date": "2025-12", "duration": "59:10", "url": "", "artwork": "" },
-  { "number": 22, "dj": "Yayo", "style": "breaks", "date": "2025-05", "duration": "57:26", "url": "", "artwork": "" },
-  { "number": 28, "dj": "Maïa Neel", "style": "electronica", "date": "2025-11", "duration": "63:47", "url": "", "artwork": "" },
-  { "number": 23, "dj": "Liut", "style": "electronica", "date": "2025-06", "duration": "61:20", "url": "", "artwork": "" },
-  { "number": 25, "dj": "Ernest", "style": "acid", "date": "2025-08", "duration": "62:00", "url": "", "artwork": "" },
-  { "number": 20, "dj": "D3", "style": "acid", "date": "2025-03", "duration": "58:15", "url": "", "artwork": "" },
-  { "number": 19, "dj": "Maïa Neel", "style": "ambient", "date": "2025-02", "duration": "74:33", "url": "", "artwork": "" }
+ {
+  "season": "s1",
+  "title": "Stepanov invite NotSerious BIGS",
+  "date": "2022-09-22",
+  "duration": "2:15:38",
+  "url": "https://soundcloud.com/radiobeguin/visual-rhythms-stepanov-invite-notserious-bigs-220922",
+  "artwork": "https://i1.sndcdn.com/artworks-08bSANxi4eA9NQX4-lNCoIA-t300x300.jpg",
+  "djs": [
+   "stepanov"
+  ]
+ },
+ {
+  "season": "s1",
+  "title": "Ren invite Natural Limit",
+  "date": "2022-10-20",
+  "duration": "2:16:22",
+  "url": "https://soundcloud.com/radiobeguin/visual-rhythms-ren-invite-natural-limit-201022",
+  "artwork": "https://i1.sndcdn.com/artworks-4JNHAOvdaju3OzKa-Blgf3g-t300x300.jpg",
+  "djs": []
+ },
+ {
+  "season": "s1",
+  "title": "Stepanov invite Maïa Neel",
+  "date": "2022-11-17",
+  "duration": "2:04:13",
+  "url": "https://soundcloud.com/radiobeguin/visual-rhythms-episode-3-stepanov-invite-maia-neel",
+  "artwork": "https://i1.sndcdn.com/artworks-jmqGlHyzVbRZmOyy-Rsfb3w-t300x300.jpg",
+  "djs": [
+   "stepanov"
+  ]
+ },
+ {
+  "season": "s1",
+  "title": "Ren invite Brain Beats",
+  "date": "2022-12-15",
+  "duration": "2:01:49",
+  "url": "https://soundcloud.com/radiobeguin/visual-rhythms-ren-invite-brain-beats-151222",
+  "artwork": "https://i1.sndcdn.com/artworks-3a2NH8y0dAX8p0yB-r3yrIw-t300x300.jpg",
+  "djs": []
+ },
+ {
+  "season": "s1",
+  "title": "Marta & les Coquillages et liut",
+  "date": "2023-01-19",
+  "duration": "1:47:44",
+  "url": "https://soundcloud.com/radiobeguin/the-calling-lovedub-mix",
+  "artwork": "https://i1.sndcdn.com/artworks-VZ1P75RpflrDIB0S-tJGD4g-t300x300.jpg",
+  "djs": [
+   "liut"
+  ]
+ },
+ {
+  "season": "s1",
+  "title": "Stepanov invite cleo",
+  "date": "2023-02-16",
+  "duration": "2:10:33",
+  "url": "https://soundcloud.com/radiobeguin/visual-rhythms-stepanov-invite-cleo-160223",
+  "artwork": "https://i1.sndcdn.com/artworks-IxrBQyhrzY4bLioQ-fyoeUw-t300x300.jpg",
+  "djs": [
+   "stepanov"
+  ]
+ },
+ {
+  "season": "s1",
+  "title": "Stepanov invite Mars O10C",
+  "date": "2023-03-23",
+  "duration": "1:59:34",
+  "url": "https://soundcloud.com/radiobeguin/visual-rhythms-stepanov-invite-mars-o10c-230323",
+  "artwork": "https://i1.sndcdn.com/artworks-duuHm334Zx51wZuI-EKy9fQ-t300x300.jpg",
+  "djs": [
+   "stepanov"
+  ]
+ },
+ {
+  "season": "s1",
+  "title": "Stepanov",
+  "date": "2023-04-22",
+  "duration": "1:54:22",
+  "url": "https://soundcloud.com/radiobeguin/visual-rhythms-stepanov-220423",
+  "artwork": "https://i1.sndcdn.com/artworks-4ZKg93beAexa30zz-0y4w0A-t300x300.jpg",
+  "djs": [
+   "stepanov"
+  ]
+ },
+ {
+  "season": "s1",
+  "title": "nochichi.",
+  "date": "2023-05-11",
+  "duration": "1:57:20",
+  "url": "https://soundcloud.com/radiobeguin/visual-rhythms-nochichi-110523",
+  "artwork": "https://i1.sndcdn.com/artworks-3ZzKUKpRTvz3O13S-fsrlxA-t300x300.jpg",
+  "djs": []
+ },
+ {
+  "season": "s1",
+  "title": "Stepanov",
+  "date": "2023-07-08",
+  "duration": "52:17",
+  "url": "https://soundcloud.com/radiobeguin/visual-rhythms-stepanov-080723",
+  "artwork": "https://i1.sndcdn.com/artworks-uImwpZJzpfXcUCLA-OhDWtA-t300x300.jpg",
+  "djs": [
+   "stepanov"
+  ]
+ },
+ {
+  "season": "s1",
+  "title": "Dr Luko x Aëme",
+  "date": "2023-07-21",
+  "duration": "2:00:38",
+  "url": "https://soundcloud.com/radiobeguin/visual-rhythms-dr-luko-x-aeme-210723",
+  "artwork": "https://i1.sndcdn.com/artworks-mDzz90kEAD2zsdxW-t1ZDlQ-t300x300.jpg",
+  "djs": []
+ },
+ {
+  "season": "s2",
+  "title": "Stepanov",
+  "date": "2023-10-26",
+  "duration": "45:46",
+  "url": "https://soundcloud.com/radiobeguin/visual-rhythms-stepanov-261023",
+  "artwork": "https://i1.sndcdn.com/artworks-F6HNySRgzcipbYN0-hteOwg-t300x300.jpg",
+  "djs": [
+   "stepanov"
+  ]
+ },
+ {
+  "season": "s2",
+  "title": "Stepanov invite D3",
+  "date": "2024-01-10",
+  "duration": "2:01:26",
+  "url": "https://soundcloud.com/radiobeguin/visual-rhythms-show-stepanov-invite-d3",
+  "artwork": "https://i1.sndcdn.com/artworks-zSyxXxi75gXuOmJz-ywYnFA-t300x300.jpg",
+  "djs": [
+   "stepanov",
+   "d3"
+  ]
+ },
+ {
+  "season": "s2",
+  "title": "Stepanov",
+  "date": "2024-05-29",
+  "duration": "1:18:49",
+  "url": "https://soundcloud.com/radiobeguin/visual-rhythms-stepanov-290524",
+  "artwork": "https://i1.sndcdn.com/artworks-deeBOfbWej08WYSp-W0Yx3A-t300x300.jpg",
+  "djs": [
+   "stepanov"
+  ]
+ },
+ {
+  "season": "s2",
+  "title": "Stepanov",
+  "date": "2024-06-27",
+  "duration": "1:06:33",
+  "url": "https://soundcloud.com/radiobeguin/visual-rhythms-stepanov-hugo-stepanian",
+  "artwork": "https://i1.sndcdn.com/artworks-7e8SgUH5XsO6GVQm-ztGZzQ-t300x300.jpg",
+  "djs": [
+   "stepanov"
+  ]
+ },
+ {
+  "season": "s3",
+  "title": "Stepanov",
+  "date": "2024-12-05",
+  "duration": "1:02:53",
+  "url": "https://soundcloud.com/radiobeguin/visual-rhythms-w-stepanov",
+  "artwork": "https://i1.sndcdn.com/artworks-9oZgCtnyiznllw7h-bpnWuQ-t300x300.png",
+  "djs": [
+   "stepanov"
+  ]
+ },
+ {
+  "season": "s3",
+  "title": "Stepanov",
+  "date": "2025-02-13",
+  "duration": "57:26",
+  "url": "https://soundcloud.com/radiobeguin/visuals-rythyms-w-stepanov-130224",
+  "artwork": "https://i1.sndcdn.com/artworks-MvXbXlzyypW2GMwg-vjVjFg-t300x300.png",
+  "djs": [
+   "stepanov"
+  ]
+ },
+ {
+  "season": "s4",
+  "title": "Yayo no Ero",
+  "date": "2025-12",
+  "duration": "1:11:29",
+  "url": "https://soundcloud.com/radiobeguin/visual-rhythms-s4-e1",
+  "artwork": "https://i1.sndcdn.com/artworks-kFR2nYyc2Muf7Fly-HT68gg-t300x300.png",
+  "djs": [
+   "yayo-no-ero"
+  ]
+ },
+ {
+  "season": "s4",
+  "title": "En direct des Clameurs — Stepanov",
+  "date": "2026-02-20",
+  "duration": "1:05:47",
+  "url": "https://soundcloud.com/radiobeguin/visual-rhythm-en-direct-des",
+  "artwork": "https://i1.sndcdn.com/artworks-5Fp7BEi9oCZpgCSS-wWX1gA-t300x300.png",
+  "djs": [
+   "stepanov"
+  ]
+ },
+ {
+  "season": "s4",
+  "title": "D3 invite cis0o0o0",
+  "date": "2026-04",
+  "duration": "2:05:24",
+  "url": "https://soundcloud.com/radiobeguin/visual-rhythms-o-d3-invite",
+  "artwork": "https://i1.sndcdn.com/artworks-X1C2dMWZbcK32zf4-cAUIOg-t300x300.png",
+  "djs": [
+   "d3"
+  ]
+ }
 ]

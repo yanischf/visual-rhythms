@@ -14,39 +14,209 @@
   "hero": {
     "kicker": "Collectif · Émission · Événements — Lyon",
     "title": "Nous explorons les possibilités des musiques électroniques.",
-    "image": "",
-    "imageAlt": "Visuel Visual Rhythms",
+    "image": "img/site/visual-rhythms-chrome.jpg",
+    "imageAlt": "Logo Visual Rhythms sur fond chromé irisé",
     "imagePlaceholder": "Visuel chrome du logo / photo floue de soirée"
   },
   "gallery": {
     "photos": [
-      { "src": "", "alt": "Photo de soirée Visual Rhythms" },
-      { "src": "", "alt": "Photo de soirée Visual Rhythms" },
-      { "src": "", "alt": "Photo de soirée Visual Rhythms" }
+      {
+        "src": "img/soirees/quai-3.jpg",
+        "alt": "Soirée au Quai 3, public sur le dancefloor"
+      },
+      {
+        "src": "img/soirees/zone-chill-les-peris-2020.jpg",
+        "alt": "Zone chill, fête aux Péris, août 2020"
+      },
+      {
+        "src": "img/soirees/soiree-chapiteau.jpg",
+        "alt": "Soirée sous chapiteau, public qui danse"
+      },
+      {
+        "src": "img/soirees/dimanches-pasithee-paradox.jpg",
+        "alt": "Les dimanches de Pasithée #2 au Paradox, 2019-2020"
+      },
+      {
+        "src": "img/soirees/performance.jpg",
+        "alt": "Performance dansée devant une projection"
+      },
+      {
+        "src": "img/soirees/open-air-fort-superposition-2020.jpg",
+        "alt": "Open air au fort avec Superposition, juillet 2020"
+      },
+      {
+        "src": "img/soirees/la-java-superposition.jpg",
+        "alt": "DJ set en b2b à La Java (Superposition)"
+      },
+      {
+        "src": "img/soirees/terrasse-ecam-2021.jpg",
+        "alt": "Scène chill, festival de la Terrasse de l'ECAM, août 2021"
+      }
     ],
-    "venues": ["Le Sucre", "Super 5", "Terminal", "Groom", "Loupika", "Heat", "La Bobine", "Périscope", "DV1", "Le Croiseur"]
+    "posters": [
+      {
+        "src": "img/affiches/visual-rhythms-collision.jpg",
+        "alt": "Affiche Visual Rhythms au Collision : Stepanov, Maïa Neel, Axonberg, 23/04"
+      },
+      {
+        "src": "img/affiches/pasithee.jpg",
+        "alt": "Visuel Pasithée"
+      },
+      {
+        "src": "img/affiches/visual-rhythms.jpg",
+        "alt": "Affiche Visual Rhythms"
+      },
+      {
+        "src": "img/affiches/nouvelles-portes-02.jpg",
+        "alt": "Affiche Nouvelles Portes 02"
+      },
+      {
+        "src": "img/affiches/affiche-2020.jpg",
+        "alt": "Affiche de soirée"
+      },
+      {
+        "src": "img/affiches/affiche-2019.jpg",
+        "alt": "Affiche de soirée"
+      },
+      {
+        "src": "img/affiches/bain-sonore.jpg",
+        "alt": "Affiche Bain sonore : DJ sets, concerts, performances, 19-20/09"
+      },
+      {
+        "src": "img/affiches/mrz-lazbeen-stepanov.jpg",
+        "alt": "Affiche MRZ, Lazbeen, Stepanov au Brewpub La Barrack, Valence, 26.05.2022"
+      }
+    ],
+    "venues": [
+      "Le Sucre",
+      "Super 5",
+      "Terminal",
+      "Groom",
+      "Loupika",
+      "Heat",
+      "La Bobine",
+      "Périscope",
+      "DV1",
+      "Le Croiseur",
+      "La Kulture",
+      "Le Comptoir Général"
+    ]
   },
-  "quote": "« À l'heure où certains ont laissé tomber leur rôle de défricheur, où la musique devient excessivement formatée, ultra catégorisée et où l'emballage semble être devenu bien plus important que le contenu… »",
+  "quote": "« À l'heure où certains ont laissé tomber leur rôle de défricheur, où la musique devient excessivement formatée, ultra catégorisée et où l'emballage semble être devenu bien plus important que le contenu. Nous devons explorer sans préjugés, sans limite, sans œillère et sans idées préconçues. »",
   "approach": {
     "title": "Visual Rhythms s'inspire humblement de cet état d'esprit.",
-    "text": "Nous portons une vision ouverte, plurielle et hybride de la musique. Nous proposons une esthétique musicale qui mêle groove, émotions, psychédélisme et percussions, d'hier et d'aujourd'hui."
+    "text": "Nous portons une vision ouverte, plurielle et hybride de la musique. Nous proposons une esthétique musicale qui mêle groove, émotions, psychédélisme et percussions. Nos artistes explorent les musiques électroniques d’hier et d’aujourd’hui, avec une oreille curieuse sur la scène émergente et un respect profond pour celles et ceux qui ont popularisé le mouvement."
   },
   "stats": [
-    { "label": "Expérience", "value": "16 ans", "text": "De Lyon à Montréal en passant par Paris, Berlin et Amsterdam, nous avons écouté ce qu'il y a de meilleur !" },
-    { "label": "Scène", "value": "+600 gigs", "text": "Nous avons eu la chance de jouer sur de multiples configurations, en France comme à l'étranger. Nous savons nous adapter aux lieux et à l'énergie du public." },
-    { "label": "Studio", "value": "+60 podcasts", "text": "Des podcasts pour des labels et collectifs, une résidence sur une webradio : ambient, techno, house, progressive…" }
+    {
+      "label": "Expérience",
+      "value": "16 ans",
+      "text": "Des années à suivre la scène en tant que spectateurs curieux, amateurs passionnés et acteurs. De Lyon à Montréal en passant par Paris, Berlin et Amsterdam, nous avons écouté ce qu'il y a de meilleur !"
+    },
+    {
+      "label": "Scène",
+      "value": "+600 gigs",
+      "text": "Nous avons eu la chance de jouer sur de multiples configurations, en France comme à l'étranger. Nous savons nous adapter aux lieux et à l'énergie du public."
+    },
+    {
+      "label": "Studio",
+      "value": "+60 podcasts",
+      "text": "Des podcasts pour des labels et collectifs, une résidence sur une webradio. Nos podcasts sont le reflet de notre goût pour l’exploration : ambient, techno, house, progressive…"
+    }
   ],
   "show": {
     "name": "Visual Rhythms Show",
     "frequency": "Mensuel",
     "text": "Une exploration entre Progressive, Breaks, Trance, Acid, Electro… Nous invitons des artistes à partager leur vision à travers des sets éclectiques qui transcendent les genres et les époques.",
     "intro": "Une série de podcasts diffusée sur différentes webradios. Le mot d'ordre : exploration des musiques électroniques club d'aujourd'hui et d'hier.",
-    "image": "",
-    "imageAlt": "Visuel de l'émission Visual Rhythms Show",
+    "image": "img/site/emission.jpg",
+    "imageAlt": "Visuel du Visual Rhythms Show",
     "seasons": [
-      { "title": "Saison 3 — w. Stepanov", "years": "2024 / 2025", "tracks": "2 tracks", "url": "" },
-      { "title": "Saison 2 — w. Stepanov", "years": "2023 / 2024", "tracks": "4 tracks", "url": "" },
-      { "title": "Saison 1 — Invités du collectif", "years": "2022 / 2023", "tracks": "— tracks", "url": "" }
+      {
+        "id": "s4",
+        "title": "Saison 4",
+        "years": "2025 / 2026",
+        "url": "https://soundcloud.com/visual_rhythms/sets/visual-rhythms-show-saison-4",
+        "color": "#ff8ad1",
+        "tint": [
+          "255,138,209",
+          "109,224,255"
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "Saison 3",
+        "years": "2024 / 2025",
+        "url": "https://soundcloud.com/stepanov-visual-rhythms/sets/visual-rhythms-show-saison-3",
+        "color": "#7cf0c8",
+        "tint": [
+          "124,240,200",
+          "143,124,255"
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Saison 2",
+        "years": "2023 / 2024",
+        "url": "https://soundcloud.com/stepanov-visual-rhythms/sets/visual-rhythms-show-23-24",
+        "color": "#b9f56a",
+        "tint": [
+          "185,245,106",
+          "247,215,116"
+        ]
+      },
+      {
+        "id": "s1",
+        "title": "Saison 1",
+        "years": "2022 / 2023",
+        "url": "",
+        "color": "#8f7cff",
+        "tint": [
+          "143,124,255",
+          "255,138,209"
+        ]
+      }
+    ]
+  },
+  "quoteAuthor": "Laurent Garnier, Deep Search",
+  "formats": {
+    "intro": "IDM, Acid, Breaks, Techno, Trance, Progressive, House… Les styles se croisent, les époques dialoguent. Nous imaginons des formats variés capables de s’adapter aux contextes, aux publics et aux intentions de chaque événement.",
+    "items": [
+      "Bain sonore dans la cave d’un fort du XIXe siècle",
+      "DJ set dans des espaces culturels",
+      "Performance musicale pour des expositions d’art",
+      "Création d’une scène ambient dans un festival urbain",
+      "Lives hybrides, soirées club et afters…"
+    ]
+  },
+  "projects": {
+    "current": [
+      {
+        "name": "Visual Rhythms",
+        "text": "exploration des musiques électroniques club d’hier et d’aujourd’hui"
+      }
+    ],
+    "past": [
+      {
+        "name": "Breaks and Bass",
+        "years": "2020 – 2022",
+        "text": "soirées autour des musiques Breakbeat et Bass"
+      },
+      {
+        "name": "Pasithée",
+        "years": "2018 – 2020",
+        "text": "listening sessions autour de la musique ambient et organisation de bains sonores"
+      },
+      {
+        "name": "The Ants Montréal",
+        "years": "2015 – 2023",
+        "text": "organisation d’événements et collectif à Montréal"
+      },
+      {
+        "name": "Station Essence",
+        "years": "2012 – 2017",
+        "text": "organisation de soirées et open airs avec une vision décomplexée de la fête !"
+      }
     ]
   }
 }

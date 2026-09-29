@@ -44,6 +44,11 @@ export function dayLabel(iso) {
   return d ? `${d}.${m}.${y}` : iso;
 }
 
+// Date complète -> "10.01.2024", mois seul -> "Janv. 2024".
+export function dateLabel(iso) {
+  return String(iso || '').split('-').length === 3 ? dayLabel(iso) : monthLabel(iso);
+}
+
 export function weekday(iso) {
   const d = new Date(`${iso}T12:00:00`);
   return Number.isNaN(d.getTime()) ? '' : DAYS[d.getDay()];
@@ -68,10 +73,11 @@ const ICON_IMAGE =
   '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/></svg>';
 
 // Image réelle si `src` est renseigné, sinon emplacement réservé (même rendu que la maquette).
-export function media({ src, alt = '', placeholder = 'Image', rel = '', eager = false, sizes, todoKey }) {
+export function media({ src, alt = '', placeholder = 'Image', rel = '', eager = false, sizes, position, todoKey }) {
   if (src) {
     const loading = eager ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"';
-    return `<img class="media" src="${esc(assetUrl(src, rel))}" alt="${esc(alt)}" ${loading} decoding="async"${sizes ? ` sizes="${esc(sizes)}"` : ''}>`;
+    const style = position ? ` style="object-position:${esc(position)}"` : '';
+    return `<img class="media" src="${esc(assetUrl(src, rel))}" alt="${esc(alt)}" ${loading} decoding="async"${sizes ? ` sizes="${esc(sizes)}"` : ''}${style}>`;
   }
   if (todoKey) need(todoKey);
   return `<div class="ph" role="img" aria-label="${esc(alt || placeholder)}">${ICON_IMAGE}<span>${esc(placeholder)}</span></div>`;
@@ -116,7 +122,10 @@ const ICON_PAUSE = '<svg class="i-pause" viewBox="0 0 12 12" aria-hidden="true" 
 
 export function playButton({ url, title, todoKey }) {
   if (url) {
-    return `<a class="play" href="${esc(url)}" data-sc="${esc(url)}" target="_blank" rel="noopener" aria-label="Écouter « ${esc(title)} » sur Soundcloud">${ICON_PLAY}${ICON_PAUSE}</a>`;
+    // Soundcloud se joue sur place (site.js) ; les autres plateformes (Mixcloud…) s'ouvrent dans un onglet.
+    const sc = /soundcloud\.com\//.test(url);
+    const platform = sc ? 'Soundcloud' : /mixcloud\.com\//.test(url) ? 'Mixcloud' : 'la plateforme';
+    return `<a class="play" href="${esc(url)}"${sc ? ` data-sc="${esc(url)}"` : ''} target="_blank" rel="noopener" aria-label="Écouter « ${esc(title)} » sur ${platform}">${ICON_PLAY}${ICON_PAUSE}</a>`;
   }
   if (todoKey) need(todoKey);
   return `<span class="play" aria-disabled="true" title="Lien Soundcloud à venir">${ICON_PLAY}</span>`;

@@ -7,7 +7,7 @@ const TINTS = [
   ['185,245,106', '247,215,116'],
 ];
 
-// Disposition de la mosaïque (maquette : 2×2, 1, 1, 2×1, 1, 1, 2×1).
+// Disposition des emplacements vides (maquette : 2×2, 1, 1, 2×1, 1, 1, 2×1).
 const MOSAIC = [
   { cls: 'span-2x2', ph: 'Photo live' },
   { cls: '', ph: 'Photo' },
@@ -17,6 +17,17 @@ const MOSAIC = [
   { cls: '', ph: 'Photo' },
   { cls: 'span-2', ph: 'Photo public' },
 ];
+
+// Dispositions qui remplissent toujours des rangées complètes de 4 colonnes.
+const LAYOUTS = {
+  1: ['span-4'],
+  2: ['span-2', 'span-2'],
+  3: ['span-2x2', 'span-2', 'span-2'],
+  4: ['span-2x2', '', '', 'span-2'],
+  5: ['span-2x2', 'span-2', 'span-2', 'span-2', 'span-2'],
+  6: ['span-2x2', '', '', 'span-2', 'span-2', 'span-2'],
+  7: MOSAIC.map((m) => m.cls),
+};
 
 export function djPage({ site, dj, tracks }) {
   const rel = '../';
@@ -36,20 +47,24 @@ export function djPage({ site, dj, tracks }) {
             seed: 14 + i,
             rel,
             todoKey: dj.tracks.length ? `${dj.name} — ${t.title}` : undefined,
+            left: t.url && !/soundcloud\.com\//.test(t.url) ? 'Mixcloud' : undefined,
           })
         )
         .join('\n')
     : `<li class="card player-note-card"><p class="player-note">Podcasts à venir.</p></li>`;
 
+  const layout = LAYOUTS[Math.min(dj.photos.length, 7)];
   const photos = dj.photos.length
-    ? dj.photos.map((p, i) => ({ ...MOSAIC[i % MOSAIC.length], src: p.src, alt: p.alt }))
+    ? dj.photos.map((p, i) => ({ cls: layout[i % layout.length], ph: 'Photo', src: p.src, alt: p.alt, position: p.position }))
     : MOSAIC.map((m) => ({ ...m, src: '', alt: `${m.ph} — ${dj.name}` }));
   const mosaic = photos
     .map(
       (p, i) =>
-        `<figure class="card card--media${p.cls ? ' ' + p.cls : ''}">${media({ src: p.src, alt: p.alt, placeholder: p.ph, rel, todoKey: i === 0 ? ['Image : photos (mosaïque)', dj.name] : undefined })}</figure>`
+        `<figure class="card card--media${p.cls ? ' ' + p.cls : ''}">${media({ src: p.src, alt: p.alt, placeholder: p.ph, rel, position: p.position, todoKey: i === 0 ? ['Image : photos (mosaïque)', dj.name] : undefined })}</figure>`
     )
     .join('\n');
+
+  const platforms = [...new Set(tracks.map((t) => (/mixcloud\.com\//.test(t.url) ? 'Mixcloud' : 'Soundcloud')))].join(' · ');
 
   const lead = dj.lead || `Bio de ${dj.name} à venir.`;
   const bio = dj.bio.map((p) => `<p>${esc(p)}</p>`).join('\n');
@@ -81,7 +96,7 @@ ${media({ src: dj.photo, alt: `${dj.name} en live`, placeholder: "Photo de l'art
 </section>
 
 <section class="section section--tight" data-reveal aria-labelledby="podcasts-title">
-<div class="section-head"><h2 class="section-title" id="podcasts-title">Podcasts</h2><span class="label muted">Soundcloud</span></div>
+<div class="section-head"><h2 class="section-title" id="podcasts-title">Podcasts</h2><span class="label muted">${platforms}</span></div>
 <ul class="players">
 ${players}
 </ul>
