@@ -47,19 +47,25 @@
     "photos": [
       {
         "src": "img/djs/stepanov/1.jpg",
-        "alt": "Stepanov et liut en DJ set en plein air"
+        "alt": "Stepanov et liut en DJ set en plein air",
+        "size": "large",
+        "position": "50% 45%"
       },
       {
         "src": "img/djs/stepanov/2.jpg",
-        "alt": "Stepanov en b2b à La Java (Superposition)"
+        "alt": "Stepanov en b2b à La Java (Superposition)",
+        "size": "small"
       },
       {
         "src": "img/djs/stepanov/3.jpg",
-        "alt": "Open air au fort (Superposition), juillet 2020"
+        "alt": "Open air au fort (Superposition), juillet 2020",
+        "size": "small"
       },
       {
         "src": "img/djs/stepanov/4.jpg",
-        "alt": "Stepanov sur scène, lumières orange"
+        "alt": "Stepanov sur scène, lumières orange",
+        "size": "wide",
+        "position": "50% 60%"
       }
     ],
     "links": {
@@ -117,16 +123,21 @@
     "photos": [
       {
         "src": "img/djs/liut/1.jpg",
-        "alt": "liut aux platines en terrasse"
+        "alt": "liut aux platines en terrasse",
+        "size": "large",
+        "position": "50% 55%"
       },
       {
         "src": "img/djs/liut/2.jpg",
         "alt": "liut aux platines",
-        "position": "50% 30%"
+        "position": "50% 35%",
+        "size": "large"
       },
       {
         "src": "img/djs/liut/3.jpg",
-        "alt": "Portrait de liut dans un miroir"
+        "alt": "Portrait de liut dans un miroir",
+        "size": "banner",
+        "position": "50% 50%"
       }
     ],
     "links": {
@@ -170,17 +181,20 @@
       {
         "src": "img/djs/yayo-no-ero/1.jpg",
         "alt": "Portrait de Yayo no Ero",
-        "position": "50% 25%"
+        "position": "50% 38%",
+        "size": "large"
       },
       {
         "src": "img/djs/yayo-no-ero/2.jpg",
         "alt": "Yayo no Ero en DJ set, néons",
-        "position": "50% 40%"
+        "position": "50% 40%",
+        "size": "tall"
       },
       {
         "src": "img/djs/yayo-no-ero/3.jpg",
         "alt": "Yayo no Ero en b2b",
-        "position": "50% 35%"
+        "position": "50% 35%",
+        "size": "tall"
       }
     ],
     "links": {
@@ -216,17 +230,20 @@
       {
         "src": "img/djs/bouazza/1.jpg",
         "alt": "Bouazza et Jérémy Chignec (flûte) sur scène",
-        "position": "50% 30%"
+        "position": "50% 35%",
+        "size": "large"
       },
       {
         "src": "img/djs/bouazza/2.jpg",
         "alt": "Bouazza aux platines",
-        "position": "50% 35%"
+        "position": "50% 30%",
+        "size": "tall"
       },
       {
         "src": "img/djs/bouazza/3.jpg",
         "alt": "Bouazza en DJ set avec flûte live",
-        "position": "50% 35%"
+        "position": "50% 40%",
+        "size": "tall"
       }
     ],
     "links": {
@@ -275,12 +292,14 @@
       {
         "src": "img/djs/d3/1.jpg",
         "alt": "D3 aux platines, lumière bleue",
-        "position": "50% 30%"
+        "position": "50% 30%",
+        "size": "large"
       },
       {
         "src": "img/djs/d3/2.jpg",
         "alt": "Portrait de D3 en noir et blanc",
-        "position": "50% 25%"
+        "position": "50% 35%",
+        "size": "large"
       }
     ],
     "links": {
@@ -329,15 +348,20 @@
       {
         "src": "img/djs/ernest/1.jpg",
         "alt": "Ernest aux platines chez un disquaire",
-        "position": "50% 25%"
+        "position": "50% 30%",
+        "size": "large"
       },
       {
         "src": "img/djs/ernest/2.jpg",
-        "alt": "Ernest en club, public et guirlandes"
+        "alt": "Ernest en club, public et guirlandes",
+        "size": "wide",
+        "position": "50% 45%"
       },
       {
         "src": "img/djs/ernest/3.jpg",
-        "alt": "Ernest en DJ set de nuit"
+        "alt": "Ernest en DJ set de nuit",
+        "size": "wide",
+        "position": "50% 55%"
       }
     ],
     "links": {

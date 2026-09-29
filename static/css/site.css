@@ -498,6 +498,9 @@ a.gallery-note:hover { background: var(--pill); }
 .span-2 { grid-column: span 2; }
 .span-2x2 { grid-column: span 2; grid-row: span 2; }
 .span-4 { grid-column: 1 / -1; }
+.span-tall { grid-row: span 2; }
+/* Pages artistes : cases plus hautes (format proche du 4:3) pour ne pas couper les visages. */
+.mosaic--artist { grid-auto-rows: 13rem; grid-auto-flow: dense; }
 
 .bio-card { padding: 2.875rem 2.6875rem 2.375rem; }
 .bio-lead {
@@ -601,6 +604,8 @@ a.gallery-note:hover { background: var(--pill); }
   .stat-value { font-size: 2.5rem; }
   .book-title { font-size: 2.5rem; }
   .mosaic { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 8.25rem; }
+  /* Hauteur de rangée = 3/4 de la largeur d'une colonne : les cases gardent un format photo. */
+  .mosaic--artist { grid-auto-rows: calc((100vw - 2rem - var(--gap)) / 2 * .75); }
   .posters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .venues-head { padding: 0 1.375rem 1rem; flex-direction: column; gap: 0.5rem; }
   .marquee-track { gap: 2.5rem; padding-right: 2.5rem; animation-duration: 32s; }

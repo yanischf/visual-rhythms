@@ -53,9 +53,11 @@ export function djPage({ site, dj, tracks }) {
         .join('\n')
     : `<li class="card player-note-card"><p class="player-note">Podcasts à venir.</p></li>`;
 
+  // `size` choisit la case selon le format de la photo (portrait -> tall, paysage -> wide…).
+  const SIZE = { large: 'span-2x2', tall: 'span-tall', wide: 'span-2', banner: 'span-4', small: '' };
   const layout = LAYOUTS[Math.min(dj.photos.length, 7)];
   const photos = dj.photos.length
-    ? dj.photos.map((p, i) => ({ cls: layout[i % layout.length], ph: 'Photo', src: p.src, alt: p.alt, position: p.position }))
+    ? dj.photos.map((p, i) => ({ cls: p.size ? SIZE[p.size] : layout[i % layout.length], ph: 'Photo', src: p.src, alt: p.alt, position: p.position }))
     : MOSAIC.map((m) => ({ ...m, src: '', alt: `${m.ph} — ${dj.name}` }));
   const mosaic = photos
     .map(
@@ -104,7 +106,7 @@ ${players}
 
 <section class="section" data-reveal aria-labelledby="photos-title">
 <div class="section-head"><h2 class="section-title" id="photos-title">Photos</h2><span class="label muted">${photos.length} visuels</span></div>
-<div class="mosaic">
+<div class="mosaic mosaic--artist">
 ${mosaic}
 </div>
 </section>
