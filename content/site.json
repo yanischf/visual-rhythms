@@ -135,6 +135,10 @@
       {
         "name": "Le Comptoir Général",
         "logo": "img/lieux/le-comptoir-general.png"
+      },
+      {
+        "name": "Panic Room",
+        "logo": "img/lieux/panic-room.png"
       }
     ]
   },

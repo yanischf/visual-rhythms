@@ -128,7 +128,7 @@ ${stats}
 
 <section class="row" data-reveal aria-labelledby="venues-title">
 <div class="card venues">
-<div class="venues-head"><h2 class="label" id="venues-title">Nous avons eu le plaisir de jouer dans ces lieux</h2><span class="label muted">${g.venues.length} lieux</span></div>
+<div class="venues-head"><h2 class="label" id="venues-title">Nous avons eu le plaisir de jouer dans ces lieux</h2></div>
 <div class="marquee">
 <ul class="marquee-track">${venueItems}</ul>
 <ul class="marquee-track" aria-hidden="true">${venueItems}</ul>
