@@ -34,7 +34,7 @@ export function djPage({ site, dj, tracks }) {
 
   const players = tracks.length
     ? tracks
-        .slice(0, 3)
+        .slice(0, 4)
         .map((t, i) =>
           player({
             title: t.title,
