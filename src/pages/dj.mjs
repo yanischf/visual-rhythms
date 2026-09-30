@@ -71,7 +71,7 @@ export function djPage({ site, dj, tracks }) {
   const lead = dj.lead || `Bio de ${dj.name} à venir.`;
   const bio = dj.bio.map((p) => `<p>${esc(p)}</p>`).join('\n');
 
-  const mail = `mailto:${site.bookingEmail || site.email}?subject=${encodeURIComponent(`Booking ${dj.name}`)}`;
+  const mail = `mailto:${site.email}?subject=${encodeURIComponent(`Booking ${dj.name}`)}`;
   const listen = [
     linkPill({ href: dj.links.soundcloud, label: 'Soundcloud', todoKey: ['Lien Soundcloud : profil', dj.name] }),
     linkPill({ href: dj.links.instagram, label: 'Instagram', todoKey: ['Lien Instagram', dj.name] }),
@@ -131,7 +131,7 @@ ${bio}
 ${bookingRow({
   site,
   artist: true,
-  email: site.bookingEmail || site.email,
+  email: site.email,
   subject: `Booking ${dj.name}`,
   kicker: `Booker ${dj.name}`,
   pills: [
