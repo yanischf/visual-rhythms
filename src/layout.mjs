@@ -1,8 +1,11 @@
 // Gabarit commun : <head>, en-tête, pied de page.
 import { esc, relRoot, jsonLd } from './lib.mjs';
 
-const FONTS =
-  'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..600&family=Space+Grotesk:wght@300;400;500&display=swap';
+// Polices hébergées sur le site (Bricolage Grotesque et Space Grotesk, licence OFL, sous-ensemble latin).
+// Déclarées ici plutôt que dans site.css : le chemin relatif dépend de la profondeur de la page.
+const fontFaces = (rel) =>
+  `@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:500 600;font-display:swap;src:url(${rel}fonts/bricolage-grotesque-latin.woff2) format("woff2")}` +
+  `@font-face{font-family:"Space Grotesk";font-style:normal;font-weight:300 500;font-display:swap;src:url(${rel}fonts/space-grotesk-latin.woff2) format("woff2")}`;
 
 // Appliqué avant le rendu pour éviter le flash de thème ; sans JS, le thème suit le système.
 const THEME_BOOT =
@@ -52,11 +55,9 @@ export function layout({ site, assets, depth = 0, path, title, description, acti
 <meta name="theme-color" content="#f0eeea" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#08060c" media="(prefers-color-scheme: dark)">
 <script>${THEME_BOOT}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="${FONTS}" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="${FONTS}"></noscript>
-<style>${assets.cssInline}</style>
+<link rel="preload" href="${rel}fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="${rel}fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>${fontFaces(rel)}${assets.cssInline}</style>
 <link rel="icon" href="${rel}favicon.svg" type="image/svg+xml">
 <link rel="alternate" type="text/plain" href="${rel}llms.txt" title="Résumé du site pour les IA">
 ${schema ? jsonLd(schema) : ''}

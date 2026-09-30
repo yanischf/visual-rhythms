@@ -69,6 +69,10 @@ Seules les dates à venir (au moment du build) sont affichées : relancer le bui
 - `sitemap.xml`, `robots.txt` (ouvert à tous les robots, IA comprises) et `llms.txt` (résumé texte du site pour les assistants IA).
 - Domaine configuré dans `content/site.json` → `url`.
 
+## Polices
+
+Bricolage Grotesque et Space Grotesk (licence SIL Open Font License) sont hébergées dans `static/fonts/` (sous-ensemble latin, ~100 Ko), sans appel à Google Fonts.
+
 ## Thème
 
 Clair / sombre selon la préférence système par défaut ; le switch mémorise le choix (localStorage). Sans JS, le thème suit le système et le switch est masqué.
