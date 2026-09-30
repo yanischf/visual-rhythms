@@ -1,4 +1,4 @@
-import { esc, media, linkPill, dayLabel } from '../lib.mjs';
+import { esc, media, linkPill, dayLabel, imageSize, STATIC } from '../lib.mjs';
 import { blob, bookingRow } from '../components.mjs';
 
 function datesCard({ events, djsBySlug }) {
@@ -61,11 +61,17 @@ export function home({ site, djs, events, episodes, latestUrl }) {
     })
     .join('\n');
 
+  // Logos affichés à 56 px de haut : largeur proportionnelle calculée depuis le fichier.
+  const logoSize = (src) => {
+    const d = imageSize(STATIC + src);
+    return d ? `width="${Math.round((d.w / d.h) * 56)}" height="56"` : 'height="56"';
+  };
+
   // Carrousel des lieux : la liste est doublée pour boucler sans à-coup (la copie est masquée aux lecteurs d'écran).
   const venueItems = g.venues
     .map((v) =>
       v.logo
-        ? `<li class="venue"><img src="${esc(v.logo)}" alt="${esc(v.name)}" loading="lazy" decoding="async" height="56"></li>`
+        ? `<li class="venue"><img src="${esc(v.logo)}" alt="${esc(v.name)}" loading="lazy" decoding="async" ${logoSize(v.logo)}></li>`
         : `<li class="venue venue--text">${esc(v.name)}</li>`
     )
     .join('');
@@ -95,7 +101,7 @@ export function home({ site, djs, events, episodes, latestUrl }) {
   const latestExt = /^https?:/.test(latestUrl) ? ' target="_blank" rel="noopener"' : '';
 
   return `
-<section class="row g-hero" data-reveal aria-labelledby="hero-title">
+<section class="row g-hero" aria-labelledby="hero-title">
 <div class="card hero-card">
 ${blob('width:620px;height:620px;left:-180px;top:-240px;opacity:.75;--dur:17s', { veil: 'tl' })}
 <p class="z label label--wide o8">${esc(site.hero.kicker)}</p>

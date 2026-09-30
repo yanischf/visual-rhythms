@@ -83,7 +83,7 @@ export function djPage({ site, dj, tracks }) {
   return `
 <p class="back label"><a href="${rel}index.html#djs">← Retour au roster</a></p>
 
-<section class="row" data-reveal aria-labelledby="artist-name">
+<section class="row" aria-labelledby="artist-name">
 <div class="card artist-hero">
 ${media({ src: dj.photo, alt: `${dj.name} en live`, placeholder: "Photo de l'artiste en pleine largeur (booth, live, portrait)", rel, sizes: '100vw', eager: true, todoKey: ['Image : photo principale DJ', dj.name] })}
 <div class="veil-photo" aria-hidden="true"></div>

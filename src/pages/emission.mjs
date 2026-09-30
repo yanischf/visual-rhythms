@@ -61,7 +61,7 @@ ${cards}
     .join('\n\n');
 
   return `
-<section class="row g-hero" data-reveal aria-labelledby="em-title">
+<section class="row g-hero" aria-labelledby="em-title">
 <div class="card em-card">
 ${blob('width:560px;height:560px;left:-200px;bottom:-330px;--from:120deg;--dur:19s', { veil: true })}
 <p class="z label muted">Podcast · ${esc(site.show.frequency)}</p>

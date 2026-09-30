@@ -2,7 +2,7 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
-const STATIC = fileURLToPath(new URL('../static/', import.meta.url));
+export const STATIC = fileURLToPath(new URL('../static/', import.meta.url));
 
 export function esc(value) {
   return String(value ?? '')
@@ -78,7 +78,7 @@ const ICON_IMAGE =
 
 // Dimensions d'un JPEG ou PNG local (lecture de l'en-tête, sans dépendance).
 const sizeCache = new Map();
-function imageSize(file) {
+export function imageSize(file) {
   if (sizeCache.has(file)) return sizeCache.get(file);
   let size = null;
   try {
@@ -106,7 +106,7 @@ function imageSize(file) {
 // Pour une image locale : dimensions explicites + version mobile (`-sm.jpg`, 700 px) proposée via srcset.
 export function media({ src, alt = '', placeholder = 'Image', rel = '', eager = false, sizes = '(max-width: 820px) 100vw, 50vw', position, todoKey }) {
   if (src) {
-    const loading = eager ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"';
+    const loading = eager ? 'loading="eager" fetchpriority="high" decoding="sync"' : 'loading="lazy" decoding="async"';
     const style = position ? ` style="object-position:${esc(position)}"` : '';
     let extra = '';
     if (!/^(https?:)?\/\//.test(src)) {
@@ -119,7 +119,7 @@ export function media({ src, alt = '', placeholder = 'Image', rel = '', eager = 
         extra += ` srcset="${esc(assetUrl(small, rel))} ${smallDim.w}w, ${esc(assetUrl(src, rel))} ${dim.w}w" sizes="${esc(sizes)}"`;
       }
     }
-    return `<img class="media" src="${esc(assetUrl(src, rel))}" alt="${esc(alt)}"${extra} ${loading} decoding="async"${style}>`;
+    return `<img class="media" src="${esc(assetUrl(src, rel))}" alt="${esc(alt)}"${extra} ${loading}${style}>`;
   }
   if (todoKey) need(todoKey);
   return `<div class="ph" role="img" aria-label="${esc(alt || placeholder)}">${ICON_IMAGE}<span>${esc(placeholder)}</span></div>`;
