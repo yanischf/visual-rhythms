@@ -37,9 +37,10 @@ Pour brancher `visual-rhythms.net` : ajouter un fichier `static/CNAME` contenant
 
 ## Ajouter les images
 
-1. Déposer les fichiers dans `static/img/` (ex. `static/img/djs/stepanov-hero.jpg`), JPG/WebP, ~2400 px de large max.
-2. Renseigner le chemin **sans** `static/` dans le JSON : `"photo": "img/djs/stepanov-hero.jpg"`.
-3. `node build.mjs`
+1. Déposer la photo en **JPG** dans `static/img/` (ex. `static/img/djs/stepanov/hero.jpg`), 1400 à 1800 px de large.
+2. Générer les versions optimisées : `node optimize-images.mjs` (nécessite ffmpeg). Il crée pour chaque photo des paliers 400 / 800 px et des versions **AVIF** (~35 % plus légères). Les photos déjà traitées sont ignorées.
+3. Renseigner le chemin **sans** `static/` dans le JSON : `"photo": "img/djs/stepanov/hero.jpg"`.
+4. `node build.mjs` : chaque image est servie via `<picture>` (AVIF, repli JPEG) avec la taille adaptée à l'écran.
 
 Tant qu'un champ image est vide, un emplacement en pointillés s'affiche (comme dans la maquette).
 À la fin de chaque build, la console liste tout ce qui reste à compléter (images, liens Soundcloud, rider, presskit…).

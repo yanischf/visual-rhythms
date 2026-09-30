@@ -103,23 +103,27 @@ export function imageSize(file) {
 }
 
 // Image réelle si `src` est renseigné, sinon emplacement réservé (même rendu que la maquette).
-// Pour une image locale : dimensions explicites + version mobile (`-sm.jpg`, 800 px) proposée via srcset.
+// Image locale : dimensions explicites + paliers générés par optimize-images.mjs
+// (nom-400 / nom-800 / original, en AVIF avec repli JPEG) proposés via <picture>.
+const TIERS = [400, 800];
 export function media({ src, alt = '', placeholder = 'Image', rel = '', eager = false, sizes = '(max-width: 820px) 100vw, 50vw', position, todoKey }) {
   if (src) {
     const loading = eager ? 'loading="eager" fetchpriority="high" decoding="sync"' : 'loading="lazy" decoding="async"';
     const style = position ? ` style="object-position:${esc(position)}"` : '';
-    let extra = '';
-    if (!/^(https?:)?\/\//.test(src)) {
-      const file = STATIC + src.replace(/^\/+/, '');
-      const dim = imageSize(file);
-      if (dim) extra += ` width="${dim.w}" height="${dim.h}"`;
-      const small = src.replace(/\.jpg$/, '-sm.jpg');
-      const smallDim = small !== src ? imageSize(STATIC + small.replace(/^\/+/, '')) : null;
-      if (dim && smallDim && existsSync(STATIC + small)) {
-        extra += ` srcset="${esc(assetUrl(small, rel))} ${smallDim.w}w, ${esc(assetUrl(src, rel))} ${dim.w}w" sizes="${esc(sizes)}"`;
-      }
+    const url = (p) => esc(assetUrl(p, rel));
+    const local = !/^(https?:)?\/\//.test(src);
+    const dim = local ? imageSize(STATIC + src.replace(/^\/+/, '')) : null;
+    const dims = dim ? ` width="${dim.w}" height="${dim.h}"` : '';
+    if (!dim || !/\.jpg$/.test(src)) {
+      return `<img class="media" src="${url(src)}" alt="${esc(alt)}"${dims} ${loading}${style}>`;
     }
-    return `<img class="media" src="${esc(assetUrl(src, rel))}" alt="${esc(alt)}"${extra} ${loading}${style}>`;
+    const base = src.replace(/^\/+/, '').replace(/\.jpg$/, '');
+    const tiers = TIERS.filter((w) => existsSync(`${STATIC}${base}-${w}.jpg`)).map((w) => [`${base}-${w}`, w]);
+    tiers.push([base, dim.w]);
+    const set = (ext) => tiers.map(([f, w]) => `${url(`${f}.${ext}`)} ${w}w`).join(', ');
+    const avif = tiers.every(([f]) => existsSync(`${STATIC}${f}.avif`));
+    const img = `<img class="media" src="${url(src)}"${tiers.length > 1 ? ` srcset="${set('jpg')}" sizes="${esc(sizes)}"` : ''} alt="${esc(alt)}"${dims} ${loading}${style}>`;
+    return avif ? `<picture><source type="image/avif" srcset="${set('avif')}" sizes="${esc(sizes)}">${img}</picture>` : img;
   }
   if (todoKey) need(todoKey);
   return `<div class="ph" role="img" aria-label="${esc(alt || placeholder)}">${ICON_IMAGE}<span>${esc(placeholder)}</span></div>`;
