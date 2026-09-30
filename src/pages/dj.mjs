@@ -131,6 +131,8 @@ ${bio}
 ${bookingRow({
   site,
   artist: true,
+  email: site.bookingEmail || site.email,
+  subject: `Booking ${dj.name}`,
   kicker: `Booker ${dj.name}`,
   pills: [
     linkPill({ href: assetUrl(dj.rider, rel), label: 'Rider & tech', cls: 'pill', external: false, todoKey: ['Fichier : rider & tech', dj.name] }),

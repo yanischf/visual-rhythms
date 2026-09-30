@@ -30,7 +30,7 @@ ${playButton({ url, title, todoKey: todoKey ? ['Lien Soundcloud : piste', todoKe
 }
 
 // Carte « Écrivez-nous » + carte contact.
-export function bookingRow({ site, kicker, pills, artist = false }) {
+export function bookingRow({ site, kicker, pills, artist = false, email = site.email, subject = '' }) {
   const style = artist
     ? 'width:700px;height:440px;left:50%;bottom:-290px;margin-left:-350px;--from:300deg;--dur:21s'
     : 'width:700px;height:460px;left:50%;bottom:-300px;margin-left:-350px;--from:300deg;--dur:21s;opacity:.7';
@@ -41,7 +41,7 @@ ${blob(style, { veil: artist ? 'br' : null })}
 <h2 class="z book-title" id="booking-title">Écrivez-nous</h2>
 </div>
 <div class="card contact-card${artist ? ' contact-card--artist' : ''}">
-<a class="contact-mail" href="mailto:${esc(site.email)}">${site.email.split('@').map(esc).join('@<br>')}</a>
+<a class="contact-mail" href="mailto:${esc(email)}${subject ? `?subject=${encodeURIComponent(subject)}` : ''}">${email.split('@').map(esc).join('@<br>')}</a>
 <div class="pills">${pills}</div>
 </div>
 </section>`;
