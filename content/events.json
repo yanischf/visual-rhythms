@@ -1,1 +1,25 @@
-[]
+[
+ {
+  "date": "2026-10-02",
+  "title": "Visual Rhythms × La Fabuleuse Cantine",
+  "venue": "La Fabuleuse Cantine",
+  "city": "Lyon",
+  "lineup": [
+   "yayo-no-ero",
+   "stepanov",
+   "liut"
+  ]
+ },
+ {
+  "date": "2026-10-03",
+  "title": "Visual Rhythms × Minimistan",
+  "venue": "Minimistan",
+  "city": "Grenoble",
+  "lineup": [
+   "yayo-no-ero",
+   "stepanov",
+   "liut",
+   "bouazza"
+  ]
+ }
+]
