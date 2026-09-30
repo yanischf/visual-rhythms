@@ -1,4 +1,8 @@
 // Helpers de rendu partagés par toutes les pages.
+import { existsSync, readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+
+const STATIC = fileURLToPath(new URL('../static/', import.meta.url));
 
 export function esc(value) {
   return String(value ?? '')
@@ -72,12 +76,50 @@ function need([category, item]) {
 const ICON_IMAGE =
   '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/></svg>';
 
+// Dimensions d'un JPEG ou PNG local (lecture de l'en-tête, sans dépendance).
+const sizeCache = new Map();
+function imageSize(file) {
+  if (sizeCache.has(file)) return sizeCache.get(file);
+  let size = null;
+  try {
+    const b = readFileSync(file);
+    if (b[0] === 0x89 && b[1] === 0x50) {
+      size = { w: b.readUInt32BE(16), h: b.readUInt32BE(20) };
+    } else if (b[0] === 0xff && b[1] === 0xd8) {
+      let i = 2;
+      while (i < b.length) {
+        const marker = b[i + 1];
+        const len = b.readUInt16BE(i + 2);
+        if (marker >= 0xc0 && marker <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(marker)) {
+          size = { w: b.readUInt16BE(i + 7), h: b.readUInt16BE(i + 5) };
+          break;
+        }
+        i += 2 + len;
+      }
+    }
+  } catch {}
+  sizeCache.set(file, size);
+  return size;
+}
+
 // Image réelle si `src` est renseigné, sinon emplacement réservé (même rendu que la maquette).
-export function media({ src, alt = '', placeholder = 'Image', rel = '', eager = false, sizes, position, todoKey }) {
+// Pour une image locale : dimensions explicites + version mobile (`-sm.jpg`, 700 px) proposée via srcset.
+export function media({ src, alt = '', placeholder = 'Image', rel = '', eager = false, sizes = '(max-width: 820px) 100vw, 50vw', position, todoKey }) {
   if (src) {
     const loading = eager ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"';
     const style = position ? ` style="object-position:${esc(position)}"` : '';
-    return `<img class="media" src="${esc(assetUrl(src, rel))}" alt="${esc(alt)}" ${loading} decoding="async"${sizes ? ` sizes="${esc(sizes)}"` : ''}${style}>`;
+    let extra = '';
+    if (!/^(https?:)?\/\//.test(src)) {
+      const file = STATIC + src.replace(/^\/+/, '');
+      const dim = imageSize(file);
+      if (dim) extra += ` width="${dim.w}" height="${dim.h}"`;
+      const small = src.replace(/\.jpg$/, '-sm.jpg');
+      const smallDim = small !== src ? imageSize(STATIC + small.replace(/^\/+/, '')) : null;
+      if (dim && smallDim && existsSync(STATIC + small)) {
+        extra += ` srcset="${esc(assetUrl(small, rel))} ${smallDim.w}w, ${esc(assetUrl(src, rel))} ${dim.w}w" sizes="${esc(sizes)}"`;
+      }
+    }
+    return `<img class="media" src="${esc(assetUrl(src, rel))}" alt="${esc(alt)}"${extra} ${loading} decoding="async"${style}>`;
   }
   if (todoKey) need(todoKey);
   return `<div class="ph" role="img" aria-label="${esc(alt || placeholder)}">${ICON_IMAGE}<span>${esc(placeholder)}</span></div>`;

@@ -44,7 +44,14 @@ const latestUrl = latest?.url || 'emission.html';
 
 const css = await readFile(join(ROOT, 'static/css/site.css'), 'utf8');
 const js = await readFile(join(ROOT, 'static/js/site.js'), 'utf8');
-const assets = { css: hash(css), js: hash(js) };
+// CSS intégré dans chaque page (≈ 6 Ko compressé) : aucune requête bloquante avant l'affichage.
+const cssInline = css
+  .replace(/\/\*[\s\S]*?\*\//g, '')
+  .replace(/\s+/g, ' ')
+  .replace(/\s*([{};:,>])\s*/g, '$1')
+  .replace(/;}/g, '}')
+  .trim();
+const assets = { css: hash(css), js: hash(js), cssInline };
 
 await rm(OUT, { recursive: true, force: true });
 await cp(join(ROOT, 'static'), OUT, { recursive: true });

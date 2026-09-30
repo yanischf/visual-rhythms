@@ -39,7 +39,7 @@ export function home({ site, djs, events, episodes, latestUrl }) {
 
   const gallery = g.photos
     .slice(0, 3)
-    .map((p, i) => `<div class="card card--media">${media({ src: p.src, alt: p.alt, placeholder: 'Photo soirée', todoKey: ['Image : galerie accueil', `photo ${i + 1}`] })}</div>`)
+    .map((p, i) => `<div class="card card--media">${media({ src: p.src, alt: p.alt, placeholder: 'Photo soirée', sizes: '(max-width: 820px) 50vw, 25vw', todoKey: ['Image : galerie accueil', `photo ${i + 1}`] })}</div>`)
     .join('\n');
 
   const stats = site.stats
@@ -80,13 +80,13 @@ export function home({ site, djs, events, episodes, latestUrl }) {
     .map((p) => `<figure class="card card--media ${SIZE[p.size] || ''}">${media({ src: p.src, alt: p.alt, placeholder: 'Photo soirée', position: p.position })}</figure>`)
     .join('\n');
   const posters = (g.posters || [])
-    .map((p) => `<li class="card card--media poster">${media({ src: p.src, alt: p.alt, placeholder: 'Affiche' })}</li>`)
+    .map((p) => `<li class="card card--media poster">${media({ src: p.src, alt: p.alt, placeholder: 'Affiche', sizes: '(max-width: 820px) 50vw, 25vw' })}</li>`)
     .join('\n');
 
   const roster = djs
     .map(
       (d) => `<li><a class="card dj-card" href="djs/${d.slug}.html">
-<div class="dj-thumb">${media({ src: d.portrait || d.photo, alt: `Portrait de ${d.name}`, placeholder: d.name, todoKey: ['Image : portrait roster', d.name] })}</div>
+<div class="dj-thumb">${media({ src: d.portrait || d.photo, alt: `Portrait de ${d.name}`, placeholder: d.name, sizes: '(max-width: 560px) 100vw, (max-width: 820px) 50vw, 33vw', todoKey: ['Image : portrait roster', d.name] })}</div>
 <div class="dj-meta"><span class="dj-name">${esc(d.name)}</span><span class="dj-tag">${esc(d.tagline)}</span></div>
 </a></li>`
     )

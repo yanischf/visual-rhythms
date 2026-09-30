@@ -85,7 +85,7 @@ export function djPage({ site, dj, tracks }) {
 
 <section class="row" data-reveal aria-labelledby="artist-name">
 <div class="card artist-hero">
-${media({ src: dj.photo, alt: `${dj.name} en live`, placeholder: "Photo de l'artiste en pleine largeur (booth, live, portrait)", rel, eager: true, todoKey: ['Image : photo principale DJ', dj.name] })}
+${media({ src: dj.photo, alt: `${dj.name} en live`, placeholder: "Photo de l'artiste en pleine largeur (booth, live, portrait)", rel, sizes: '100vw', eager: true, todoKey: ['Image : photo principale DJ', dj.name] })}
 <div class="veil-photo" aria-hidden="true"></div>
 <div class="artist-hero-text">
 <div>

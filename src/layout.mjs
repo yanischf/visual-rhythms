@@ -54,8 +54,9 @@ export function layout({ site, assets, depth = 0, path, title, description, acti
 <script>${THEME_BOOT}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="${FONTS}">
-<link rel="stylesheet" href="${rel}css/site.css?v=${assets.css}">
+<link rel="preload" as="style" href="${FONTS}" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="${FONTS}"></noscript>
+<style>${assets.cssInline}</style>
 <link rel="icon" href="${rel}favicon.svg" type="image/svg+xml">
 <link rel="alternate" type="text/plain" href="${rel}llms.txt" title="Résumé du site pour les IA">
 ${schema ? jsonLd(schema) : ''}
