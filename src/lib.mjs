@@ -103,7 +103,7 @@ export function imageSize(file) {
 }
 
 // Image réelle si `src` est renseigné, sinon emplacement réservé (même rendu que la maquette).
-// Pour une image locale : dimensions explicites + version mobile (`-sm.jpg`, 700 px) proposée via srcset.
+// Pour une image locale : dimensions explicites + version mobile (`-sm.jpg`, 800 px) proposée via srcset.
 export function media({ src, alt = '', placeholder = 'Image', rel = '', eager = false, sizes = '(max-width: 820px) 100vw, 50vw', position, todoKey }) {
   if (src) {
     const loading = eager ? 'loading="eager" fetchpriority="high" decoding="sync"' : 'loading="lazy" decoding="async"';
