@@ -189,6 +189,15 @@ a.pill.is-active:hover, a.pill[aria-current="page"]:hover { background: var(--in
   :root:not([data-theme="light"]) .theme-switch .ts-dark { background: var(--ink); color: var(--inv); font-weight: 500; }
 }
 
+.socials { display: flex; gap: 0.375rem; margin: 0 0 0 0.5rem; padding: 0; list-style: none; flex: none; }
+.social {
+  display: flex; align-items: center; justify-content: center;
+  width: 2.375rem; height: 2.375rem; border-radius: 50%;
+  background: var(--pill); color: var(--ink); transition: background-color .15s, color .15s;
+}
+.social:hover { background: var(--ink); color: var(--inv); }
+.social svg { width: 1.0625rem; height: 1.0625rem; }
+
 .btn-contact {
   display: flex; align-items: center; gap: 0.5rem; margin-left: 0.5rem; flex: none;
   padding: 0.75rem 1.125rem; border-radius: 6.1875rem;
@@ -579,11 +588,18 @@ a.gallery-note:hover { background: var(--pill); }
   .hero-title { font-size: 3.125rem; }
 }
 
+@media (max-width: 480px) {
+  /* Téléphone : logo réduit à la pastille pour laisser la place aux réseaux et au bouton Contact. */
+  .logo { padding: 0.8125rem; }
+  .logo-text { display: none; }
+}
+
 @media (max-width: 820px) {
   .top { flex-wrap: wrap; }
   .top-right { display: contents; }
   .logo { order: 1; }
-  .btn-contact { order: 2; margin-left: auto; }
+  .socials { order: 2; margin-left: auto; }
+  .btn-contact { order: 2; margin-left: 0; }
   .nav-wrap {
     order: 3; flex: 1 1 100%; min-width: 0;
     display: flex; align-items: center; gap: 0.375rem;

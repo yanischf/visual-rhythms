@@ -11,6 +11,25 @@ const fontFaces = (rel) =>
 const THEME_BOOT =
   "(function(d){d.className=d.className.replace('no-js','js');try{var t=localStorage.getItem('vr-theme');if(t==='dark'||t==='light')d.setAttribute('data-theme',t)}catch(e){}})(document.documentElement)";
 
+// Icônes des réseaux du collectif (SVG inline, couleur du texte).
+const ICONS = {
+  instagram:
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>',
+  soundcloud:
+    '<svg viewBox="0 1.4 24 24" fill="currentColor"><path d="M10 8.5c.9-.6 2-1 3.2-1 3 0 5.4 2.2 5.7 5.1l.6-.1c1.9 0 3.5 1.5 3.5 3.4s-1.6 3.4-3.5 3.4H10z"/><rect x="7.2" y="9.5" width="1.5" height="9.8" rx=".75"/><rect x="4.5" y="11.3" width="1.5" height="8" rx=".75"/><rect x="1.8" y="13.5" width="1.5" height="5.8" rx=".75"/></svg>',
+};
+
+function socials(links = {}) {
+  const items = [
+    ['instagram', 'Instagram'],
+    ['soundcloud', 'Soundcloud'],
+  ].filter(([k]) => links[k]);
+  if (!items.length) return '';
+  return `<ul class="socials">${items
+    .map(([k, label]) => `<li><a class="social" href="${esc(links[k])}" target="_blank" rel="noopener" aria-label="${label} de Visual Rhythms" title="${label}">${ICONS[k]}</a></li>`)
+    .join('')}</ul>`;
+}
+
 function header({ site, active, rel }) {
   const items = [
     { id: 'home', label: 'Accueil', href: `${rel}index.html` },
@@ -27,6 +46,7 @@ function header({ site, active, rel }) {
 <nav aria-label="Navigation principale"><ul class="nav">${nav}</ul></nav>
 <button class="theme-switch" type="button" aria-pressed="false" aria-label="Changer de thème"><span class="ts-light">Light</span><span class="ts-dark">Dark</span></button>
 </div>
+${socials(site.links)}
 <a class="btn-contact" href="mailto:${esc(site.email)}">Contact<span aria-hidden="true">↗</span></a>
 </div>
 </header>`;
