@@ -1,4 +1,4 @@
-import { esc, media, linkPill, assetUrl } from '../lib.mjs';
+import { esc, media, linkPill, assetUrl, need } from '../lib.mjs';
 import { blob, bookingRow, player } from '../components.mjs';
 
 const TINTS = [
@@ -72,9 +72,11 @@ export function djPage({ site, dj, tracks }) {
   const bio = dj.bio.map((p) => `<p>${esc(p)}</p>`).join('\n');
 
   const mail = `mailto:${site.email}?subject=${encodeURIComponent(`Booking ${dj.name}`)}`;
+  // Sans profil perso, le bouton renvoie vers le compte du collectif (toujours signalé dans le rapport du build).
+  const profile = (key, todoKey) => dj.links[key] || (need(todoKey), site.links[key]);
   const listen = [
-    linkPill({ href: dj.links.soundcloud, label: 'Soundcloud', todoKey: ['Lien Soundcloud : profil', dj.name] }),
-    linkPill({ href: dj.links.instagram, label: 'Instagram', todoKey: ['Lien Instagram', dj.name] }),
+    linkPill({ href: profile('soundcloud', ['Lien Soundcloud : profil', dj.name]), label: 'Soundcloud' }),
+    linkPill({ href: profile('instagram', ['Lien Instagram', dj.name]), label: 'Instagram' }),
     linkPill({ href: mail, label: 'Booking', external: false }),
   ]
     .map((l) => `<li>${l}</li>`)

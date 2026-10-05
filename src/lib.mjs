@@ -68,7 +68,7 @@ export function isoDuration(dur) {
 
 // Registre des éléments manquants (images, liens) affiché à la fin du build : catégorie -> éléments.
 export const todo = new Map();
-function need([category, item]) {
+export function need([category, item]) {
   if (!todo.has(category)) todo.set(category, new Set());
   todo.get(category).add(item);
 }
