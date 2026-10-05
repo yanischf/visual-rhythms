@@ -3,6 +3,9 @@ name: Déploiement GitHub Pages
 on:
   push:
     branches: [main]
+  # Chaque nuit (~5 h à Paris) : les dates passées quittent « Prochaines dates » sans attendre un push.
+  schedule:
+    - cron: '0 3 * * *'
   workflow_dispatch:
 
 permissions:

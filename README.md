@@ -59,7 +59,7 @@ Champs image : `site.hero.image`, `site.gallery.photos[].src`, `site.show.image`
   "lineup": ["stepanov", "d3"], "status": "En vente", "ticketUrl": "https://…" }
 ```
 
-Seules les dates à venir (au moment du build) sont affichées : relancer le build après une soirée, ou le programmer (cron / hook de déploiement).
+Seules les dates à venir sont affichées ; s'il n'y en a aucune, l'accueil montre les dernières dates passées (« Dernières dates »). Le site est régénéré automatiquement chaque nuit, donc une soirée passée bascule d'elle-même le lendemain.
 
 ## Référencement & IA
 

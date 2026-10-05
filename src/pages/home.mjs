@@ -3,20 +3,21 @@ import { blob, bookingRow } from '../components.mjs';
 
 function datesCard({ events, djsBySlug }) {
   const today = new Date().toISOString().slice(0, 10);
-  const upcoming = events
-    .filter((e) => e.date && e.date >= today)
-    .sort((a, b) => a.date.localeCompare(b.date))
-    .slice(0, 4);
+  const dated = events.filter((e) => e.date);
+  const upcoming = dated.filter((e) => e.date >= today).sort((a, b) => a.date.localeCompare(b.date)).slice(0, 4);
+  // Sans date à venir, on montre les dernières soirées passées plutôt que des emplacements vides.
+  const past = upcoming.length ? [] : dated.filter((e) => e.date < today).sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4);
+  const shown = upcoming.length ? upcoming : past;
 
   let rows;
-  if (upcoming.length) {
-    rows = upcoming
+  if (shown.length) {
+    rows = shown
       .map((e) => {
         const lineup = (e.lineup || []).map((s) => djsBySlug[s]?.name || s).join(', ');
         const place = [e.venue, e.city].filter(Boolean).join(', ');
-        const meta = [lineup, place, e.status].filter(Boolean).join(' · ');
+        const meta = [lineup, place, upcoming.length ? e.status : ''].filter(Boolean).join(' · ');
         const inner = `<time datetime="${esc(e.date)}">${esc(dayLabel(e.date))}</time><span><span class="date-name">${esc(e.title)}</span>${meta ? `<span class="date-meta">${esc(meta)}</span>` : ''}</span>`;
-        return e.ticketUrl
+        return e.ticketUrl && upcoming.length
           ? `<li><a class="date-row date-row--real" href="${esc(e.ticketUrl)}" target="_blank" rel="noopener">${inner}</a></li>`
           : `<li><div class="date-row date-row--real">${inner}</div></li>`;
       })
@@ -25,8 +26,9 @@ function datesCard({ events, djsBySlug }) {
     const ph = '<li class="date-row date-row--ph"><span>JJ.MM.AAAA</span><span class="date-name">Nom de la soirée — line-up · Lieu, ville</span></li>';
     rows = ph + '\n' + ph;
   }
+  const [title, label] = upcoming.length ? ['Prochaines dates', 'Agenda'] : past.length ? ['Dernières dates', 'Archives'] : ['Prochaines dates', 'À compléter'];
   return `<div class="card dates">
-<div class="dates-head"><h2 class="dates-title">Prochaines dates</h2><span class="label o6">${upcoming.length ? 'Agenda' : 'À compléter'}</span></div>
+<div class="dates-head"><h2 class="dates-title">${title}</h2><span class="label o6">${label}</span></div>
 <ul class="dates-list">
 ${rows}
 </ul>
