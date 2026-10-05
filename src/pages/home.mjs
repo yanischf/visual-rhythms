@@ -33,7 +33,7 @@ ${rows}
 </div>`;
 }
 
-export function home({ site, djs, events, episodes, latestUrl }) {
+export function home({ site, djs, events, episodes }) {
   const djsBySlug = Object.fromEntries(djs.map((d) => [d.slug, d]));
   const g = site.gallery;
 
@@ -98,7 +98,6 @@ export function home({ site, djs, events, episodes, latestUrl }) {
     )
     .join('\n');
 
-  const latestExt = /^https?:/.test(latestUrl) ? ' target="_blank" rel="noopener"' : '';
 
   return `
 <section class="row g-hero" aria-labelledby="hero-title">
@@ -106,7 +105,7 @@ export function home({ site, djs, events, episodes, latestUrl }) {
 ${blob('width:620px;height:620px;left:-180px;top:-240px;opacity:.75;--dur:17s', { veil: 'tl' })}
 <p class="z label label--wide o8">${esc(site.hero.kicker)}</p>
 <h1 class="z hero-title" id="hero-title">${esc(site.hero.title)}</h1>
-<a class="z btn-ghost" href="${esc(latestUrl)}"${latestExt}><span aria-hidden="true">▶</span><span>Écouter le dernier podcast</span></a>
+<a class="z btn-ghost" href="emission.html"><span aria-hidden="true">▶</span><span>Écouter le dernier podcast</span></a>
 </div>
 <div class="card card--media hero-media">${media({ src: site.hero.image, alt: site.hero.imageAlt, placeholder: site.hero.imagePlaceholder, eager: true, todoKey: ['Image : visuel', 'hero accueil'] })}</div>
 </section>

@@ -39,8 +39,6 @@ site.noindex = process.env.NOINDEX === '1';
 
 const djsBySlug = Object.fromEntries(djs.map((d) => [d.slug, d]));
 const seasonTitle = Object.fromEntries(site.show.seasons.map((s) => [s.id, s.title]));
-const latest = [...episodes].sort((a, b) => b.date.localeCompare(a.date))[0];
-const latestUrl = latest?.url || 'emission.html';
 
 const css = await readFile(join(ROOT, 'static/css/site.css'), 'utf8');
 const js = await readFile(join(ROOT, 'static/js/site.js'), 'utf8');
@@ -110,7 +108,7 @@ pages.push({
         ...eventSchemas,
       ],
     },
-    body: home({ site, djs, events, episodes, latestUrl }),
+    body: home({ site, djs, events, episodes }),
   }),
 });
 
