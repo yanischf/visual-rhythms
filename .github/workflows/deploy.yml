@@ -26,11 +26,6 @@ jobs:
         with:
           node-version: 20
       - name: Génération du site
-        # Adresse provisoire : non indexée tant que visual-rhythms.net n'est pas branché.
-        # Au branchement du domaine : supprimer SITE_URL et NOINDEX, ajouter static/CNAME.
-        env:
-          SITE_URL: https://yanischf.github.io/visual-rhythms
-          NOINDEX: '1'
         run: node build.mjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

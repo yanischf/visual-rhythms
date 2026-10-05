@@ -31,9 +31,7 @@ serve.mjs         ← serveur local de prévisualisation
 ## Mise en ligne
 
 Chaque push sur `main` régénère et publie le site via GitHub Pages (`.github/workflows/deploy.yml`).
-Adresse provisoire : https://yanischf.github.io/visual-rhythms/ (non indexée par les moteurs).
-
-Pour brancher `visual-rhythms.net` : ajouter un fichier `static/CNAME` contenant `visual-rhythms.net`, retirer `SITE_URL` et `NOINDEX` du workflow, puis configurer le DNS chez le registrar (voir la doc GitHub Pages « custom domain »).
+Adresse : https://visual-rhythms.net (domaine chez Squarespace Domains, DNS pointé vers GitHub Pages : 4 enregistrements A `185.199.108-111.153` sur `@`, CNAME `www` → `yanischf.github.io`). L'ancienne adresse github.io redirige vers le domaine.
 
 ## Ajouter les images
 
